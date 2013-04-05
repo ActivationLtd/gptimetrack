@@ -9,7 +9,7 @@
 <?php 
   if($_SESSION[logged]){
 
-  echo "<a class='homepage_menu topmenu_item' href='index.php'><img src='images/home-menu-icon.png' align='middle' /> Home</a>"; 
+  //echo "<a class='homepage_menu topmenu_item' href='index.php'><img src='images/home-menu-icon.png' align='middle' /> Home</a>"; 
   if(hasPermission('security_assignment','add',$_SESSION[current_user_id])){
   	echo "<a class='homepage_menu topmenu_item' href='time_list.php'><img src='images/security-assignment.png' align='middle' /> Time</a> ";
   }
