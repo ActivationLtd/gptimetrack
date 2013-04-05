@@ -27,11 +27,11 @@ $.widget("ech.multiselectdd", {
 	// default options
 	options: {
 		header: true,
-		height: 200,
-		minWidth: 150,
+		height: 175,
+		minWidth: 225,
 		classes: '',
-		checkAllText: 'select all',
-		uncheckAllText: 'None',
+		checkAllText: 'all',
+		uncheckAllText: 'all',
 		noneSelectedText: 'Select options',
 		selectedText: '# selected',
 		selectedList: 0,
@@ -414,14 +414,12 @@ $.widget("ech.multiselectdd", {
 	// set menu width
 	_setMenuWidth: function(){
 		var m = this.menu,
-			width = 200;
-			/*
-			this.button.outerWidth()-
+			width = this.button.outerWidth()-
 				parseInt(m.css('padding-left'),10)-
 				parseInt(m.css('padding-right'),10)-
 				parseInt(m.css('border-right-width'),10)-
 				parseInt(m.css('border-left-width'),10);
-			*/	
+				
 		m.width( width || this.button.outerWidth() );
 	},
 	
