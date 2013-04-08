@@ -22,7 +22,8 @@
         	User <br />
           <?php
 					$selectedIdCsv = $user_id_csv;
-					$customQuery = " WHERE user_active='1'  AND user_type_id='3'";
+					//$customQuery = " WHERE user_active='1'  AND user_type_id='3'";
+					$customQuery = " WHERE user_active='1'  ";
 					createMultiSelectOptions('user', 'user_id', 'user_fullname', $customQuery, $selectedIdCsv, 'user_id[]', " multiple='multiple' class='multiselectdd'");
 					?>
         </td>
