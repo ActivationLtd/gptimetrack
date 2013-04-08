@@ -236,13 +236,14 @@ $rows=mysql_num_rows($r);
               <tr>
                 <td><?php echo $arr[$i][time_id];?></td>
                 <td><?php echo $arr[$i][time_total]; ?></td>
-                <td><?php echo $arr[$i][time_date]; ?></td>
+                <td><span style="width:50px"><?php echo $arr[$i][time_date]; ?></span></td>
                 <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>
                 <td><?php echo $arr[$i][time_project_id];?></td>
                 <td><?php echo $arr[$i][time_description];?></td>
                 <td><?php echo $arr[$i][time_updated_datetime];?></td>
                 <td><?php echo getActiveStatus($arr[$i][time_active]);?></td>
                 <td>
+                	<span style="width:75px">
                   <?php
                     if(hasPermission('time', 'edit', $_SESSION[current_user_id])){
                   	//if($arr[$i][user_first_name]!='superadmin'){
@@ -253,8 +254,9 @@ $rows=mysql_num_rows($r);
                   	//if($arr[$i][user_first_name]!='superadmin'){
 											echo " | <a href='time_list.php?time_id=".$arr[$i][time_id]."&param=delete'>Delete</a>";
 											//}
-										}
+										}									
 									?>
+                  </span>
                 </td>
               </tr>
               <?php } ?>
