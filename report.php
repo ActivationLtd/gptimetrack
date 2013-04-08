@@ -157,8 +157,7 @@ function createDropdown($arr, $frm) {
 						for ($i = 0; $i < $rows; $i++) {
 						?>
             <tr id="<?php echo $arr[$i][uid]; ?>" >
-              <td><span class="small" style="font-size:0px;"> <?php echo date('ymd', strtotime($arr[$i][start_time])); ?> </span> <br />
-               <?php echo date('d-M-y', strtotime($arr[$i][time_date])); ?></td>
+              <td><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></td>
               <td><?php echo "W" . date("W", strtotime($arr[$i][time_date])) . ""; ?></td>
               <td><?php echo $arr[$i][time_total];?></td>
               <td><?php echo $arr[$i][client_company_name]; ?></td>
