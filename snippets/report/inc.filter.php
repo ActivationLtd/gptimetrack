@@ -33,7 +33,7 @@
           <input name="date_start_datetime" id="date_start_datetime" type="hidden" value="<?php echo addEditInputField('date_start_datetime'); ?>" size="20" class="" readonly="readonly" />
           <script>
 							$("input[name=date_start]").datepicker({
-									dateFormat: "dd-M-yy",
+									dateFormat: "dd-mm-yy",
 									altField: "#date_start_datetime",
 									altFormat: "yy-mm-dd",
 									onSelect: function() {
