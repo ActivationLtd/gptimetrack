@@ -236,14 +236,14 @@ $rows=mysql_num_rows($r);
               <tr>
                 <td><?php echo $arr[$i][time_id];?></td>
                 <td><?php echo $arr[$i][time_total]; ?></td>
-                <td><span style="width:50px"><?php echo $arr[$i][time_date]; ?></span></td>
+                <td><span style="width:80px; float:left"><?php echo $arr[$i][time_date]; ?></span></td>
                 <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>
                 <td><?php echo $arr[$i][time_project_id];?></td>
                 <td><?php echo $arr[$i][time_description];?></td>
                 <td><?php echo $arr[$i][time_updated_datetime];?></td>
                 <td><?php echo getActiveStatus($arr[$i][time_active]);?></td>
                 <td>
-                	<span style="width:75px">
+                	<span style="width:125px;float:left;">
                   <?php
                     if(hasPermission('time', 'edit', $_SESSION[current_user_id])){
                   	//if($arr[$i][user_first_name]!='superadmin'){
