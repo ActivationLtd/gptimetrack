@@ -134,7 +134,7 @@ function createDropdown($arr, $frm) {
         <div class="alert"> <?php printAlert($valid, $alert); ?> </div>
       <?php include('snippets/report/inc.filter.php');?>
       <div class="clear"></div>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="datatable_nopagination" style="text-shadow: white 0.1em 0 0">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="<?php if($_REQUEST[basic_table]!='true')echo "datatable_nopagination";?>" style="text-shadow: white 0.1em 0 0">
           <thead style="font-weight:bold;">
             <tr>
               <td>Date</td>

@@ -87,6 +87,10 @@
         	Year <br />
           <input id ="year" name="year" type="text" value="<?php echo addEditInputField('year'); ?>" size="4" class="validate[min[2012], max[2014], custom[number]]" style="float: none;width:40px" />
         </td>
+        <td>
+        	Basic Table<br/>
+          <input name="basic_table" type="checkbox" value="true" /> 
+        </td>
       </tr>
     </table>
     <div class="clear"></div>
