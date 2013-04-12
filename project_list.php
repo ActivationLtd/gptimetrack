@@ -234,7 +234,7 @@ $rows=mysql_num_rows($r);
                 <tr>
                   <td>
                     project_additional_info: <br/> 
-                    <textarea name="project_additional_info" cols="30" rows="6" class=""><?php echo addEditInputField('project_dispatch_note'); ?></textarea>
+                    <textarea name="project_additional_info" cols="30" rows="6" class=""><?php echo addEditInputField('project_additional_info'); ?></textarea>
 
                   </td>
                 </tr>
