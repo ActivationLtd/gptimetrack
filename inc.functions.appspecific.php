@@ -5,6 +5,7 @@ $brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others");
 $deliverable_type_array=array("General flash banner", "Rich media flash banner", "Static banner", "Edm", "Website", "Others");
 $activity_type_array=array("Localization", "Adaptation", "Localization,Adaptation", "Master Development", "Master Development,Localization,Adaptation", "Others");
 $user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer", "QA", "Depp administration", "Others");
+$project_billing_type_array=array("Retained", "Non-retained");
 $mail->AddCC("raihan.sikder@adpeople.com","Dev Team");
 
 $defaultPopUpConfirmationMsg="Please confirm the action by checking the box to the left.";

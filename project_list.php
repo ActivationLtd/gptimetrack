@@ -131,6 +131,15 @@ $rows=mysql_num_rows($r);
               </tr>
               <tr>
                 <td>
+                Project billing type:<br/>
+                <?php
+                  $selectedId=addEditInputField('project_billing_type');                 
+									createSelectOptionsFrmArray($project_billing_type_array,$selectedId,"project_billing_type"," class='validate[required]'")
+                  ?>
+                </td>
+              </tr>
+              <tr>
+                <td>
                   Project Brand Name:<br/> 
                   <?php
                   $selectedId=addEditInputField('project_brand_name');                 
