@@ -27,6 +27,9 @@
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
   		echo "<a class='homepage_menu topmenu_item' href='report.php'><img src='images/security-assignment.png' align='middle' /> Report</a> ";
   	}
+		if(hasPermission('project','add',$_SESSION[current_user_id])){
+  		echo "<a class='homepage_menu topmenu_item' href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report GP format</a> ";
+  	}
 	  
   }?>
 
