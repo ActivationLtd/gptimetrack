@@ -29,81 +29,57 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables features
  */
-
 .dataTables_wrapper {
-	position: relative;
-	clear: both;
-	zoom: 1; /* Feeling sorry for IE */
+	position: relative; clear: both; zoom: 1; /* Feeling sorry for IE */
 }
 
 .dataTables_processing {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 250px;
-	height: 30px;
-	margin-left: -125px;
-	margin-top: -15px;
-	padding: 14px 0 2px 0;
-	border: 1px solid #ddd;
-	text-align: center;
-	color: #999;
-	font-size: 14px;
-	background-color: white;
+	position: absolute; top: 50%; left: 50%; width: 250px; height: 30px; margin-left: -125px; margin-top: -15px; padding: 14px 0 2px 0; border: 1px solid #ddd; text-align: center; color: #999; font-size: 14px; background-color: white;
 }
 
 .dataTables_length {
-	width: 40%;
-	float: left;
+	width: 40%; float: left;
 }
 
 .dataTables_filter {
-	width: 50%;
-	float: right;
-	text-align: right;
+	width: 50%; float: right; text-align: right;
 }
-.dataTables_filter input{
-	float:right;
+
+.dataTables_filter input {
+	float: right;
 }
 
 .dataTables_info {
-	width: 60%;
-	float: left;
+	width: 60%; float: left;
 }
 
 .dataTables_paginate {
-	float: right;
-	text-align: right;
+	float: right; text-align: right;
 }
 
 /* Pagination nested */
-.paginate_disabled_previous, .paginate_enabled_previous,
-.paginate_disabled_next, .paginate_enabled_next {
-	height: 19px;
-	float: left;
-	cursor: pointer;
-	*cursor: hand;
-	color: #111 !important;
+.paginate_disabled_previous,.paginate_enabled_previous,.paginate_disabled_next,.paginate_enabled_next {
+	height: 19px; float: left; cursor: pointer; *cursor: hand; color: #111 !important;
 }
-.paginate_disabled_previous:hover, .paginate_enabled_previous:hover,
-.paginate_disabled_next:hover, .paginate_enabled_next:hover {
+
+.paginate_disabled_previous:hover,.paginate_enabled_previous:hover,.paginate_disabled_next:hover,.paginate_enabled_next:hover {
 	text-decoration: none !important;
 }
-.paginate_disabled_previous:active, .paginate_enabled_previous:active,
-.paginate_disabled_next:active, .paginate_enabled_next:active {
+
+.paginate_disabled_previous:active,.paginate_enabled_previous:active,.paginate_disabled_next:active,.paginate_enabled_next:active {
 	outline: none;
 }
 
-.paginate_disabled_previous,
-.paginate_disabled_next {
+.paginate_disabled_previous,.paginate_disabled_next {
 	color: #666 !important;
 }
-.paginate_disabled_previous, .paginate_enabled_previous {
+
+.paginate_disabled_previous,.paginate_enabled_previous {
 	padding-left: 23px;
 }
-.paginate_disabled_next, .paginate_enabled_next {
-	padding-right: 23px;
-	margin-left: 10px;
+
+.paginate_disabled_next,.paginate_enabled_next {
+	padding-right: 23px; margin-left: 10px;
 }
 
 .paginate_disabled_previous {
@@ -113,6 +89,7 @@
 .paginate_enabled_previous {
 	background: url('../images/back_enabled.png') no-repeat top left;
 }
+
 .paginate_enabled_previous:hover {
 	background: url('../images/back_enabled_hover.png') no-repeat top left;
 }
@@ -124,20 +101,17 @@
 .paginate_enabled_next {
 	background: url('../images/forward_enabled.png') no-repeat top right;
 }
+
 .paginate_enabled_next:hover {
 	background: url('../images/forward_enabled_hover.png') no-repeat top right;
 }
-
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables display
  */
 table.display {
-	margin: 0 auto;
-	clear: both;
-	width: 100%;
-	
+	margin: 0 auto; clear: both; width: 100%;
+
 	/* Note Firefox 3.5 and before have a bug with border-collapse
 	 * ( https://bugzilla.mozilla.org/show%5Fbug.cgi?id=155955 ) 
 	 * border-spacing: 0; is one possible option. Conditional-css.com is
@@ -153,17 +127,11 @@ table.display {
 }
 
 table.display thead th {
-	padding: 3px 18px 3px 10px;
-	border-bottom: 1px solid black;
-	font-weight: bold;
-	cursor: pointer;
-	* cursor: hand;
+	padding: 3px 18px 3px 10px; border-bottom: 1px solid black; font-weight: bold; cursor: pointer; * cursor: hand;
 }
 
 table.display tfoot th {
-	padding: 3px 18px 3px 10px;
-	border-top: 1px solid black;
-	font-weight: bold;
+	padding: 3px 18px 3px 10px; border-top: 1px solid black; font-weight: bold;
 }
 
 table.display tr.heading2 td {
@@ -178,12 +146,9 @@ table.display td.center {
 	text-align: center;
 }
 
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables sorting
  */
-
 .sorting_asc {
 	background: url('../images/sort_asc.png') no-repeat center right;
 }
@@ -203,13 +168,10 @@ table.display td.center {
 .sorting_desc_disabled {
 	background: url('../images/sort_desc_disabled.png') no-repeat center right;
 }
- 
+
 th:active {
 	outline: none;
 }
-
-
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables row classes
@@ -246,19 +208,13 @@ table.display tr.even.gradeU {
 	background-color: #eee;
 }
 
-
 tr.odd {
-	/*background-color: #E2E4FF;*/
-	background-color: white;
+	background-color: white; border: 1px dotted #CCCCCC;
 }
 
 tr.even {
-	background-color: white;
+	background-color: white; border: 1px dotted #CCCCCC;
 }
-
-
-
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Misc
@@ -268,14 +224,11 @@ tr.even {
 }
 
 .dataTables_scrollBody {
-	*margin-top: -1px;
-	-webkit-overflow-scrolling: touch;
+	*margin-top: -1px; -webkit-overflow-scrolling: touch;
 }
 
-.top, .bottom {
-	padding: 15px;
-	background-color: #F5F5F5;
-	border: 1px solid #CCCCCC;
+.top,.bottom {
+	padding: 15px; background-color: #F5F5F5; border: 1px solid #CCCCCC;
 }
 
 .top .dataTables_info {
@@ -291,9 +244,7 @@ tr.even {
 }
 
 tfoot input {
-	margin: 0.5em 0;
-	width: 100%;
-	color: #444;
+	margin: 0.5em 0; width: 100%; color: #444;
 }
 
 tfoot input.search_init {
@@ -301,25 +252,19 @@ tfoot input.search_init {
 }
 
 td.group {
-	background-color: #d1cfd0;
-	border-bottom: 2px solid #A19B9E;
-	border-top: 2px solid #A19B9E;
+	background-color: #d1cfd0; border-bottom: 2px solid #A19B9E; border-top: 2px solid #A19B9E;
 }
 
 td.details {
-	background-color: #d1cfd0;
-	border: 2px solid #A19B9E;
+	background-color: #d1cfd0; border: 2px solid #A19B9E;
 }
-
 
 .example_alt_pagination div.dataTables_info {
 	width: 40%;
 }
 
 .paging_full_numbers {
-	width: 400px;
-	height: 22px;
-	line-height: 22px;
+	width: 400px; height: 22px; line-height: 22px;
 }
 
 .paging_full_numbers a:active {
@@ -330,16 +275,8 @@ td.details {
 	text-decoration: none;
 }
 
-.paging_full_numbers a.paginate_button,
- 	.paging_full_numbers a.paginate_active {
-	border: 1px solid #aaa;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	padding: 2px 5px;
-	margin: 0 3px;
-	cursor: pointer;
-	*cursor: hand;
-	color: #333 !important;
+.paging_full_numbers a.paginate_button,.paging_full_numbers a.paginate_active {
+	border: 1px solid #aaa; -webkit-border-radius: 5px; -moz-border-radius: 5px; padding: 2px 5px; margin: 0 3px; cursor: pointer; *cursor: hand; color: #333 !important;
 }
 
 .paging_full_numbers a.paginate_button {
@@ -347,8 +284,7 @@ td.details {
 }
 
 .paging_full_numbers a.paginate_button:hover {
-	background-color: #ccc;
-	text-decoration: none !important;
+	background-color: #ccc; text-decoration: none !important;
 }
 
 .paging_full_numbers a.paginate_active {
@@ -363,13 +299,12 @@ table.display tr.odd.row_selected td {
 	background-color: #9FAFD1;
 }
 
-
 /*
  * Sorting classes for columns
  */
 /* For the standard odd/even */
 tr.odd td.sorting_1 {
-	background-color: #D3D6FF;
+	background-color: #F2F2F2;
 }
 
 tr.odd td.sorting_2 {
@@ -391,7 +326,6 @@ tr.even td.sorting_2 {
 tr.even td.sorting_3 {
 	background-color: #F9F9FF;
 }
-
 
 /* For the Conditional-CSS grading rows */
 /*
@@ -499,15 +433,14 @@ tr.even.gradeU td.sorting_3 {
 	background-color: #e2e2e2;
 }
 
-
 /*
  * Row highlighting example
  */
-.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+.ex_highlight #example tbody tr.even:hover,#example tbody tr.even td.highlighted {
 	background-color: #ECFFB3;
 }
 
-.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+.ex_highlight #example tbody tr.odd:hover,#example tbody tr.odd td.highlighted {
 	background-color: #E6FF99;
 }
 
@@ -543,7 +476,6 @@ tr.even.gradeU td.sorting_3 {
 	background-color: #DBFF70;
 }
 
-
 /*
  * KeyTable
  */
@@ -572,9 +504,5 @@ table.display tr.gradeU {
 }
 
 div.box {
-	height: 100px;
-	padding: 10px;
-	overflow: auto;
-	border: 1px solid #8080FF;
-	background-color: #E5E5FF;
+	height: 100px; padding: 10px; overflow: auto; border: 1px solid #8080FF; background-color: #E5E5FF;
 }

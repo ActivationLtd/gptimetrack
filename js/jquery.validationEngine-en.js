@@ -108,6 +108,10 @@
                     "regex": /^[a-zA-Z\ \']+$/,
                     "alertText": "* Letters only"
                 },
+								"onlyCharactersForFileName": {
+                    "regex":  /^[a-zA-Z0-9\ _-]+$/,
+                    "alertText": "* Invalid character for file naming"
+                },
                 "onlyLetterNumber": {
                     "regex": /^[0-9a-zA-Z]+$/,
                     "alertText": "* No special characters allowed"

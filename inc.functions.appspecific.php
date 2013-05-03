@@ -529,7 +529,7 @@ function createDropdown($arr, $frm) {
 function createProjectSelectOptions($dbtableName,$dbtableIdField,$dbtableValueField,$customQuery,$selectedId,$name,$params){
 	$q="SELECT * FROM $dbtableName 
 		$customQuery 
-		ORDER BY $dbtableValueField ASC";
+		ORDER BY project_client_id ASC";
 	//echo $q;
 	$r=mysql_query($q)or die(mysql_error());
 	
@@ -538,10 +538,10 @@ function createProjectSelectOptions($dbtableName,$dbtableIdField,$dbtableValueFi
 		echo "<select name='$name' $params>";
 		echo "<option value=''>select</option>";
 		foreach($a as $b){
-			$client_name=getClientNameFrmId($b[$dbtableIdField]);
+			$client_name=getClientNameFrmId($b['project_client_id']);
 			echo "<option value='".$b[$dbtableIdField]."' ";
 			if($b[$dbtableIdField]==$selectedId){echo " selected='selected' ";}
-			echo " >".$client_name." - ".$b[$dbtableValueField]."</option>";
+			echo " >".$client_name." - [".$b[project_id]."] ".$b[$dbtableValueField]."</option>";
 		}
 		echo "</select>";
 	}

@@ -106,7 +106,7 @@
 			}
 			else
 			{
-				html = html.replace(/\n/g, '<br/>new');
+				html = html.replace(/\n/g, '<br>new');
 			}
 			
 			if (this.dummy.html() != html)

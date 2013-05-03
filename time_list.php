@@ -20,13 +20,15 @@ if($param=='delete'){
 	insertLog('Time', 'Time deleted', 'time', 'time_id', $time_id,$sql,$_SESSION[current_user_id],print_r($_SERVER, true));
 	header('location:'.$_SERVER['PHP_SELF']);
 }
+if(!strlen($param)){$param='add';}
 
-
+/*
 if(!strlen($time_id)){
 	$param="add";
 }else{
 	$param="edit";
 }
+*/
 if(isset($_POST[submit])){
 	if($param=='add'||$param=='edit'){
 		$exception_field=array('submit','param');
@@ -59,6 +61,7 @@ if(isset($_POST[submit])){
 					insertLog('Time', 'Time added', 'time', 'time_id', $time_id,$sql,$_SESSION[current_user_id],print_r($_SERVER, true));
 					$param='edit';
 					array_push($alert,"The project has been saved!");
+					//header("time_list.php?param=success");
 				}else{
 					$valid=false;
 					array_push($alert,"You don't have permission to add project");
@@ -126,7 +129,7 @@ $rows=mysql_num_rows($r);
                 </h2>
               </td>
               <td align="right">
-                <a href="<?php echo $_SERVER['PHP_SELF']; ?>">[+] Add </a>
+                <?php if($param!="add"){?><a href="<?php echo $_SERVER['PHP_SELF']; ?>">[+] Add </a><?php } ?>
               </td>
             </tr>
           </table>
@@ -139,7 +142,7 @@ $rows=mysql_num_rows($r);
 									<?php									
 									$selectedId = addEditInputField('time_project_id');
 									$customQuery = " WHERE project_active='1' ";
-									createProjectSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "class='validate[required] selectmenu'");
+									createProjectSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "id='combobox' class='validate[required]'");
 									?>
                 </td>
               </tr>
