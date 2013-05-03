@@ -36,8 +36,10 @@
 <script type="text/javascript" src="multiple_select/js/plugins/scrollTo/jquery.scrollTo-min.js"></script> -->
 <script type="text/javascript" src="multiple_select/js/ui.multiselect.js"></script>
 <!--Fancybox-->
+<!--
 <script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.3"></script>
 <link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+-->
 <script type="text/javascript" src="js/jquery.highlight-4.js"></script>
 <style>
 .highlight { background-color: yellow }

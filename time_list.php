@@ -35,6 +35,10 @@ if(isset($_POST[submit])){
 		/*
 		 *	server side validation
 		*/
+		if(empty($_POST["time_project_id"])){
+			$valid=false;
+			array_push($alert,"Please give a valid project");
+		}
 		if(empty($_POST["time_total"])){
 			$valid=false;
 			array_push($alert,"Please give a valid time_total");
@@ -59,7 +63,7 @@ if(isset($_POST[submit])){
 					mysql_query($sql) or die(mysql_error()."<b>Query:</b><br>$sql<br>");
 					$time_id= mysql_insert_id();
 					insertLog('Time', 'Time added', 'time', 'time_id', $time_id,$sql,$_SESSION[current_user_id],print_r($_SERVER, true));
-					$param='edit';
+					//$param='edit';
 					array_push($alert,"The project has been saved!");
 					//header("time_list.php?param=success");
 				}else{
@@ -209,7 +213,7 @@ $rows=mysql_num_rows($r);
             <input name="reset" type="reset" class="bgblue button" value="Reset" />
             <input type="hidden" name="time_updated_by_user_id" value="<?php echo $_SESSION["current_user_id"]; ?>" />
             <?php
-          if($time_id){?>
+          if($time_id && $param=='edit'){?>
             <input type="hidden" name="time_id" value="<?php echo $time_id; ?>" />
             <?php
           }?>
