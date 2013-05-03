@@ -507,4 +507,17 @@ function getActiveStatus($val){
 	if($val=='1')echo "<span class='active'>Active</span>";
 	else if($val=='0')echo "<span class='inactive'>Inactive</span>";
 }
+
+function createDropdown($arr, $frm) {
+    echo '<select name="' . $frm . '" id="' . $frm . '">'; //<option value="">Select one…</option>';
+    foreach ($arr as $key => $value) {
+        if ($value == $_REQUEST[month]) {
+            echo '<option selected value="' . $value . '">' . $value . '</option>';
+        } else {
+            echo '<option value="' . $value . '">' . $value . '</option>';
+        }
+    }
+    echo '</select>';
+}
+
 ?>

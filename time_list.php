@@ -95,9 +95,7 @@ if($time_id){
 	$a = mysql_fetch_assoc($r);
 	$rows=mysql_num_rows($r);
 }
-if(currentUserIsGeneralUser()){
-	$extended_query = "WHERE time_user_id='".$_SESSION['current_user_id']."' ";
-}
+$extended_query = "WHERE time_user_id='".$_SESSION['current_user_id']."' ";
 
 $sql = "SELECT * FROM time ". $extended_query;
 $r = mysql_query($sql)or die(mysql_error()."<b>Query:</b><br>___<br>$sql<br>");

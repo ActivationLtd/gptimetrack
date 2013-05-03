@@ -177,6 +177,16 @@ if(mysql_num_rows($r)){$a=mysql_fetch_assoc($r);}
             <td><input name="user_fullname" type="text" value="<?php echo addEditInputField('user_fullname'); ?>" size="30" maxlength="60"  class="validate[required]"/></td>
           </tr>
           <tr>
+            <td>User Employee Id</td>
+            <td><input name="user_employee_id" type="text" value="<?php echo addEditInputField('user_employee_id'); ?>" size="30" maxlength="60"  class=""/></td>
+            <td>            
+          </tr>
+          <tr>
+            <td>User Joining Date</td>
+            <td><input name="user_joining_date" type="text" value="<?php echo addEditInputField('user_joining_date'); ?>" size="30" maxlength="60"  class="validate[custom[date]]"/></td>
+            <td>            
+          </tr>
+          <tr>
             <td>Phone:</td>
             <td><input name="user_phone" type="text" value="<?php echo addEditInputField('user_phone'); ?>" size="30" maxlength="60"  class="validate[required]"/>
             	<span class="small">SMS notification will be sent to this number. Use a valid number format(i.e +61...)</span></td></td>
