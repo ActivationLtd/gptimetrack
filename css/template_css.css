@@ -329,8 +329,8 @@ div.alert_inside {
 	float:left;
 	margin-top:10px;
 	color:#fff;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 }
 div #info_box {
 	background:#F2F2F2;
@@ -353,7 +353,7 @@ div#click_show {
 }
 div#topmenu {
 	float:left;
-	width:600px;
+	width:auto;
 	padding:10px 0px 0px 15px;
 	height:45px;
 	border-left: 2px dotted #999999;

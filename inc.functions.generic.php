@@ -175,7 +175,6 @@ function createSelectOptions($dbtableName,$dbtableIdField,$dbtableValueField,$cu
 		}
 		echo "</select>";
 	}
-
 }
 
 function createSelectOptionsFrmArray($listArray,$selectedId,$name,$params){

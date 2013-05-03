@@ -16,6 +16,7 @@ function getUserNameFrmId($user_id){
 	//echo $a[user_name];
 	return $a[user_name];
 }
+
 function getUserFullNameFrmId($user_id){
 	$r=mysql_query("select user_fullname from user where user_id='$user_id'")or die(mysql_error());
 	$a=mysql_fetch_assoc($r);
@@ -64,10 +65,15 @@ function getClientUserIds($client_id){
 	$a=mysql_fetch_assoc($r);
 	return $a[client_user_ids];
 }
-function getSiteNameFrmId($security_site_id){
-	$r=mysql_query("select ss_name from security_site where ss_id='$security_site_id'")or die(mysql_error());
+function getProjectNameFrmId($project_id){
+	$r=mysql_query("select project_name from project where project_id='$project_id'")or die(mysql_error());
 	$a=mysql_fetch_assoc($r);
-	return $a[ss_name];
+	return $a[project_name];
+}
+function getClientNameFrmId($client_id){
+	$r=mysql_query("select client_company_name from client where client_id='$client_id'")or die(mysql_error());
+	$a=mysql_fetch_assoc($r);
+	return $a[client_company_name];
 }
 function totalPaymentAmount($sa_id){ //$sa_id : security assignment id
 	$r=mysql_query("select * from security_assignment where sa_id='$sa_id'")or die(mysql_error());
@@ -518,6 +524,27 @@ function createDropdown($arr, $frm) {
         }
     }
     echo '</select>';
+}
+
+function createProjectSelectOptions($dbtableName,$dbtableIdField,$dbtableValueField,$customQuery,$selectedId,$name,$params){
+	$q="SELECT * FROM $dbtableName 
+		$customQuery 
+		ORDER BY $dbtableValueField ASC";
+	//echo $q;
+	$r=mysql_query($q)or die(mysql_error());
+	
+	if(mysql_num_rows($r)){
+		$a=mysql_fetch_rowsarr($r);
+		echo "<select name='$name' $params>";
+		echo "<option value=''>select</option>";
+		foreach($a as $b){
+			$client_name=getClientNameFrmId($b[$dbtableIdField]);
+			echo "<option value='".$b[$dbtableIdField]."' ";
+			if($b[$dbtableIdField]==$selectedId){echo " selected='selected' ";}
+			echo " >".$client_name." - ".$b[$dbtableValueField]."</option>";
+		}
+		echo "</select>";
+	}
 }
 
 ?>

@@ -139,7 +139,7 @@ $rows=mysql_num_rows($r);
 									<?php									
 									$selectedId = addEditInputField('time_project_id');
 									$customQuery = " WHERE project_active='1' ";
-									createSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "class='validate[required] selectmenu'");
+									createProjectSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "class='validate[required] selectmenu'");
 									?>
                 </td>
               </tr>
@@ -236,7 +236,7 @@ $rows=mysql_num_rows($r);
                 <td><?php echo $arr[$i][time_total]; ?></td>
                 <td><span style="width:80px; float:left"><?php echo $arr[$i][time_date]; ?></span></td>
                 <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>
-                <td><?php echo $arr[$i][time_project_id];?></td>
+                <td><?php echo getProjectNameFrmId($arr[$i][time_project_id]);?></td>
                 <td><?php echo $arr[$i][time_description];?></td>
                 <td><?php echo $arr[$i][time_updated_datetime];?></td>
                 <td><?php echo getActiveStatus($arr[$i][time_active]);?></td>
