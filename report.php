@@ -85,7 +85,7 @@ $(document).ready(function() {
 		"bPaginate":false,
 		"sPaginationType":"full_numbers",
 		"iDisplayLength":25,
-		"bStateSave":false,
+		"bStateSave":true,
 		"oLanguage":{
 			"sSearch":"Search all columns:"
 		},
