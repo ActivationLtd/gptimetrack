@@ -40,7 +40,7 @@ $(document).ready(function($) {
 		"iDisplayLength" : 100,
 		//"bFilter": false,
 		"aaSorting": [[ 0, "desc" ]],
-		"bStateSave": true
+		"bStateSave": false
   	});
 	/*******************************************************************************/	
 

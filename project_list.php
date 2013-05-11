@@ -276,7 +276,7 @@ $rows=mysql_num_rows($r);
               <tr>
                 <th>project_id</th>
                 <th><span class="w150">project_name</span></th>
-                <th>Nramd<!--project_brand_name--></th>
+                <th>Brand<!--project_brand_name--></th>
                 <th>Client<!--project_client--></th>
                 <th>Type<!--project_deliverable_type--></th>
                 <th>Units<!--project_deliverable_count--></th>
@@ -343,7 +343,7 @@ $rows=mysql_num_rows($r);
 			"bPaginate": false,
 			"sPaginationType": "full_numbers",
 			"iDisplayLength" : 25,
-			"bStateSave": true,
+			"bStateSave": false,
 			"oLanguage": {
 				"sSearch": "Search all columns:"
 			},
