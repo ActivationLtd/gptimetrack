@@ -22,25 +22,49 @@ include('snippets/report/inc.searchquery.php');
         <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="<?php if($_REQUEST[basic_table]!='true')echo "datatable_nopagination";?>" style="text-shadow: white 0.1em 0 0">
           <thead>
             <tr>
-            	<th>user_employee_id</th>
+            	<th>Emp_id</th>
               <th>Name</th>
               <th>e-mail</th>
               <th>User Role</th>
-              <th>Joining date</th>
+              <th>Joining_date</th>
               <th>Project</th>
               <th>Country</th>
               <th>Billing Type</th>
               <th>Brand/Segment</th>
               <th>Production type</th>              
               <th><span style="width:80px; float:left">Date</span></th>
-              <th>project_activity_type</th>
-              <th>Production Hours</th>
+              <th>Activity<br/> type</th>
+              <th>Hours</th>
               <th>Description</th>
-              <th>Project Status</th>
+              <th>Status</th>
               <th>Client</th>                            
               <th>Depp</th>
-              <th>VML Job</th>              
+              <th>VML #</th>              
             </tr>
+            <?php 
+						if($_REQUEST[basic_table]!='true'){?>
+              <tr class="filterInput">
+                <td><input type="text" name="user_employee_id" value="" class="search_init" /></td>
+                <td><input type="text" name="name" value="" class="search_init" /></td>
+                <td><input type="text" name="email" value="" class="search_init" /></td>
+                <td><input type="text" name="role" value="" class="search_init" /></td>
+                <td><input type="text" name="joining_date" value="" class="search_init" /></td>
+                <td><input type="text" name="project" value="" class="search_init" /></td>                
+                <td><input type="text" name="Country" value="" class="search_init" /></td>
+                <td><input type="text" name="billing_type" value="" class="search_init" /></td>
+                <td><input type="text" name="Brand_segment" value="" class="search_init" /></td>
+                <td><input type="text" name="production_type" value="" class="search_init" /></td>
+                <td><input type="text" name="date" value="" class="search_init" /></td>
+                <td><input type="text" name="project_activity_type" value="" class="search_init" /></td>
+                <td><input type="text" name="hours" value="" class="search_init" /></td>
+                <td><input type="text" name="Description" value="" class="search_init" /></td>
+                <td><input type="text" name="Status" value="" class="search_init" /></td>
+                <td><input type="text" name="Client" value="" class="search_init" /></td>
+                <td><input type="text" name="Depp" value="" class="search_init" /></td>
+                <td><input type="text" name="ML Job" value="" class="search_init" /></td>                
+              </tr>
+            <?php 
+						}?>
           </thead>
           <tbody>
             <?php

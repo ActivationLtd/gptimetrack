@@ -89,12 +89,15 @@
         </td>
         <td>
         	Basic Table<br/>
-          <input name="basic_table" type="checkbox" value="true" /> 
+          <input name="basic_table" type="checkbox" value="true" <?php if($_REQUEST[basic_table]=='true'){echo "checked='checked'";}?> /> 
+        </td>
+        <td>
+        	<input type="submit" name="submit" value="Filter" class="bgblue button" />
+    			<a href="<?=$_SERVER['PHP_SELF']?>" class='button bgblue'>Reset</a>
         </td>
       </tr>
     </table>
-    <div class="clear"></div>
-    <input type="submit" name="submit" value="Filter" class="bgblue button" />
-    <a href="<?=$_SERVER['PHP_SELF']?>" class='button bgblue'>Reset</a>
+    
+    
   </form>
 </div>

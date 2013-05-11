@@ -9,7 +9,7 @@ body {
 	color: #333333;
 	font-size: 11px;
 }
-thead{
+th{
 	font-weight:bold;
 }
 .search_init,.search_init_focus{width:90%}

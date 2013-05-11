@@ -19,21 +19,38 @@ include('snippets/report/inc.searchquery.php');
         <div class="alert"> <?php printAlert($valid, $alert); ?> </div>
       <?php include('snippets/report/inc.filter.php');?>
       <div class="clear"></div>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="<?php if($_REQUEST[basic_table]!='true')echo "datatable_nopagination";?>" style="text-shadow: white 0.1em 0 0">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="<?php if($_REQUEST[basic_table]!='true')echo "report_datatable";?>" style="text-shadow: white 0.1em 0 0">
           <thead style="font-weight:bold;">
             <tr>
-              <td>Date</td>
-              <td>Week</td>
-              <td>Hours</td>
-              <td>Client</td>
-              <td>Brand</td>
-              <td>Project</td>
-              <td>Depp</td>
-              <td>VML Job</td>
-              <td>User</td>
-              <td>User Role</td>
-              <td>Comment</td>
+              <th>Date</th>
+              <th>Week</th>
+              <th>Hours</th>
+              <th>Client</th>
+              <th>Brand</th>
+              <th>Project</th>
+              <th>Depp</th>
+              <th>VML Job</th>
+              <th>User</th>
+              <th>User Role</th>
+              <th>Comment</th>
             </tr>
+            <?php 
+						if($_REQUEST[basic_table]!='true'){?>
+              <tr class="filterInput">
+                <td><input type="text" name="Date" value="" class="search_init" /></td>
+                <td><input type="text" name="Week" value="" class="search_init" /></td>
+                <td><input type="text" name="Hours" value="" class="search_init" /></td>
+                <td><input type="text" name="Client" value="" class="search_init" /></td>
+                <td><input type="text" name="Brand" value="" class="search_init" /></td>
+                <td><input type="text" name="Project" value="" class="search_init" /></td>                
+                <td><input type="text" name="Depp" value="" class="search_init" /></td>
+                <td><input type="text" name="VML Job" value="" class="search_init" /></td>
+                <td><input type="text" name="User" value="" class="search_init" /></td>
+                <td><input type="text" name="User Role" value="" class="search_init" /></td>
+                <td><input type="text" name="Comment" value="" class="search_init" /></td>                
+              </tr>
+            <?php 
+						}?>
           </thead>
           <tbody>
             <?php
@@ -61,5 +78,60 @@ include('snippets/report/inc.searchquery.php');
     </div>
   </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+var asInitVals = new Array();
+$(document).ready(function() {
+	oTable = $('#report_datatable').dataTable( {
+		"bPaginate":false,
+		"sPaginationType":"full_numbers",
+		"iDisplayLength":25,
+		"bStateSave":false,
+		"oLanguage":{
+			"sSearch":"Search all columns:"
+		},
+		"bSortCellsTop":true
+	});
+
+	$("thead input").keyup(function(){
+		/* Filter on the column (the index) of this element */
+		oTable.fnFilter( this.value, $("thead input").index(this) );
+		var index=$("thead input").index(this);
+		index++;
+		//alert(index);
+		$("#report_datatable tbody tr td:nth-child("+index+")").removeHighlight();
+		$("#report_datatable tbody tr td:nth-child("+index+")").highlight($(this).val());
+	});
+	/*
+	 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+	 * the footer
+	 */
+	$("thead input").each(function(i){
+		asInitVals[i]=this.value;
+	});
+	/*
+	 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+	 * the footer
+	 */
+	$("thead input").each(function(i){
+		asInitVals[i]=this.value;
+	});
+
+	$("thead input").focus(function(){
+		if(this.className=="search_init")
+		{
+			this.className="search_init_focus";
+			this.value="";
+		}
+	});
+
+	$("thead input").blur( function (i){
+		if ( this.value=="" )
+		{
+			this.className="search_init";
+			this.value = asInitVals[$("thead input").index(this)];
+		}
+	});	
+});
+</script>
 </body>
 </html>
