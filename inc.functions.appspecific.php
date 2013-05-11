@@ -527,11 +527,11 @@ function createDropdown($arr, $frm) {
 }
 
 function createProjectSelectOptions($dbtableName,$dbtableIdField,$dbtableValueField,$customQuery,$selectedId,$name,$params){
-	$q="SELECT * FROM $dbtableName 
+	$sql="SELECT * FROM $dbtableName 
 		$customQuery 
 		ORDER BY project_client_id ASC";
 	//echo $q;
-	$r=mysql_query($q)or die(mysql_error());
+	$r=mysql_query($sql)or die(mysql_error()."<br>Query:<br>____<br>$sql<br>");
 	
 	if(mysql_num_rows($r)){
 		$a=mysql_fetch_rowsarr($r);
@@ -545,6 +545,15 @@ function createProjectSelectOptions($dbtableName,$dbtableIdField,$dbtableValueFi
 		}
 		echo "</select>";
 	}
+}
+
+function countProjectUtilizationHoursFrmProjectId($project_id){
+  $sql = "SELECT SUM(time_total) FROM time WHERE time_project_id='$project_id'";
+  $r = mysql_query($sql)or die(mysql_error()."<b>Query:</b><br>___<br>$sql<br>");
+  $a = mysql_fetch_assoc($r);
+  //echo "SUM:".$a['SUM(time_total)'];
+  return round($a['SUM(time_total)'],2);
+  
 }
 
 ?>

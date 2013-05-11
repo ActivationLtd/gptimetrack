@@ -37,8 +37,6 @@ include('snippets/report/inc.searchquery.php');
           </thead>
           <tbody>
             <?php
-						$total_hours = 0;
-						$total_amount = 0;
 						for ($i=0; $i<$rows; $i++){
 						?>
             <tr id="<?php echo $arr[$i][uid]; ?>" >
@@ -52,17 +50,11 @@ include('snippets/report/inc.searchquery.php');
               <td><?php echo $arr[$i][project_vml_job_number];?></td>
               <td><?php echo $arr[$i][user_fullname]; ?></td>
               <td><?php echo $arr[$i][user_role_name]; ?></td>              
-              <td><?php echo nl2br($arr[$i][time_description]);?></td>
+              <td><?php echo $arr[$i][time_description];?></td>
             </tr>
             <?php } ?>
           </tbody>
         </table>
-        <div class="clear"></div>        
-        <form action="print_excel.php" method="post">
-          <input type="hidden" name="sql_query_string" value="<?php echo $q_filtered; ?>" class="bgblue button" />          
-          <input type="submit" name="submit" value="Download Excel" style="float: right;" />
-          
-        </form>
     </div>
     <div id="footer">
       <?php include('footer.php'); ?>

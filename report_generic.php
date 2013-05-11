@@ -20,26 +20,26 @@ include('snippets/report/inc.searchquery.php');
       <?php include('snippets/report/inc.filter.php');?>
       <div class="clear"></div>
         <table width="100%" border="0" cellpadding="0" cellspacing="0"  id="<?php if($_REQUEST[basic_table]!='true')echo "datatable_nopagination";?>" style="text-shadow: white 0.1em 0 0">
-          <thead style="font-weight:bold;">
+          <thead>
             <tr>
-            	<td>user_employee_id</td>
-              <td>Name</td>
-              <td>e-mail</td>
-              <td>User Role</td>
-              <td>Joining date</td>
-              <td>Project</td>
-              <td>Country</td>
-              <td>Billing Type</td>
-              <td>Brand/Segment</td>
-              <td>Production type</td>              
-              <td>Date</td>
-              <td>project_activity_type</td>
-              <td>Production Hours</td>
-              <td>Description</td>
-              <td>Project Status</td>
-              <td>Client</td>                            
-              <td>Depp</td>
-              <td>VML Job</td>              
+            	<th>user_employee_id</th>
+              <th>Name</th>
+              <th>e-mail</th>
+              <th>User Role</th>
+              <th>Joining date</th>
+              <th>Project</th>
+              <th>Country</th>
+              <th>Billing Type</th>
+              <th>Brand/Segment</th>
+              <th>Production type</th>              
+              <th><span style="width:80px; float:left">Date</span></th>
+              <th>project_activity_type</th>
+              <th>Production Hours</th>
+              <th>Description</th>
+              <th>Project Status</th>
+              <th>Client</th>                            
+              <th>Depp</th>
+              <th>VML Job</th>              
             </tr>
           </thead>
           <tbody>
@@ -59,32 +59,18 @@ include('snippets/report/inc.searchquery.php');
               <td><?php echo $arr[$i][project_billing_type]; ?></td> 
               <td><?php echo $arr[$i][project_brand_name]; ?></td>
               <td><?php echo $arr[$i][project_deliverable_type]; ?></td>
-              <td><span style="width:80px; float:left"><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></span></td>
+              <td><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></td>
               <td><?php echo $arr[$i][project_activity_type]; ?></td>
               <td><?php echo $arr[$i][time_total];?></td>
-              <td><?php echo nl2br($arr[$i][time_description]);?></td>
+              <td><?php echo $arr[$i][time_description];?></td>
               <td><?php echo $arr[$i][project_active]; ?></td> 
               <td><?php echo $arr[$i][client_company_name]; ?></td>                            
               <td><?php echo $arr[$i][project_depp_key]; ?></td>
-              <td><?php echo $arr[$i][project_vml_job_number];?></td>                                      
-              
+              <td><?php echo $arr[$i][project_vml_job_number];?></td>
             </tr>
             <?php } ?>
           </tbody>
-        </table>
-        <div class="clear"></div>
-        <?php
-				if (hasPermission('security_assignment', 'add', $_SESSION[current_user_id])) {
-						echo "Total hours : " . $total_hours . "<br />";
-						echo "Total amount : " . $total_amount . "<br />";
-				}
-				?>
-        <form action="#" method="post">
-          <input type="hidden" name="sql_query_string" value="<?php echo $q_filtered; ?>" class="bgblue button" />
-          <?php if (hasPermission('security_assignment', 'delete', $_SESSION[current_user_id])) { ?>
-          <input type="submit" name="submit" value="Download Excel" style="float: right;" />
-          <?php } ?>
-        </form>
+        </table>        
     </div>
     <div id="footer">
       <?php include('footer.php'); ?>

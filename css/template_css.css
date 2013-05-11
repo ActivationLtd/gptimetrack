@@ -4,11 +4,20 @@
 }
 body {
 	background: repeat-x left top;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-family: 'Segoe UI',Verdana, Geneva, Arial, Helvetica, sans-serif;
 	text-align: left;
 	color: #333333;
 	font-size: 11px;
 }
+thead{
+	font-weight:bold;
+}
+.search_init,.search_init_focus{width:90%}
+.highlight { background-color: yellow }
+.w150{width:150px; display:block}
+.w175{width:175px; display:block}
+.w200{width:200px; display:block}
+.w225{width:225px; display:block}
 a {
 	color:#0066FF;
 	text-decoration:none;
@@ -818,6 +827,7 @@ tr.odd{
 	padding: 10px 0px 0px 10px;
 }
 
+
 .ui-combobox {
     display: inline-block;
     height: 24px;
@@ -842,3 +852,5 @@ tr.odd{
 		/* add padding to account for vertical scrollbar */
 		padding-right: 20px;
 	}
+	
+	

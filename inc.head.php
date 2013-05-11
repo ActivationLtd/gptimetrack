@@ -35,7 +35,7 @@ $(document).ready(function($) {
 		"bStateSave": true
   	});
 	$('table#datatable_nopagination').dataTable({
-    	"bPaginate": false,
+    "bPaginate": false,
 		"bInfo": false,
 		"iDisplayLength" : 100,
 		//"bFilter": false,

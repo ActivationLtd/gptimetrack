@@ -7,7 +7,7 @@ if(!hasPermission('project','add',$_SESSION[current_user_id])){
 }
 
 /*******************************************/
-/* Add/Edit Partner Artist
+/* Add/Edit 
  /*******************************************/
 $valid=true;
 $alert=array();
@@ -56,7 +56,7 @@ if(isset($_POST[submit])){
 				}
 			}else if($param=='edit'){
 				/*
-				 *	Check whether current user has permission to edit client
+				 *	Check whether current user has permission to edit 
 				*/
 				if(hasPermission('Project','edit',$_SESSION[current_user_id])){
 					/*
@@ -70,7 +70,7 @@ if(isset($_POST[submit])){
 					array_push($alert,"The project has been saved!");
 				}else{
 					$valid=false;
-					array_push($alert,"You don't have permission to edit project");
+					array_push($alert,"You don't have permission to edit");
 				}
 			}
 			//echo $sql;
@@ -271,30 +271,50 @@ $rows=mysql_num_rows($r);
         </div>
         <div id="right_m">
           <!--<h2>List of Customers</h2>-->
-          <table id="datatable" width="100%">
+          <table id="project_list_datatable" width="100%">
             <thead>
               <tr>
-                <td>[id]</td>
-                <td>project_name</td>
-                <td>project_brand_name</td>
-                <td>project_client</td>
-                <td>project_deliverable_type</td>
-                <td>project_depp_key</td>
-                <td>project_vml_job_number</td>
-                <td>Status</td>
-                <td>Action</td>
+                <th>project_id</th>
+                <th><span class="w150">project_name</span></th>
+                <th>Nramd<!--project_brand_name--></th>
+                <th>Client<!--project_client--></th>
+                <th>Type<!--project_deliverable_type--></th>
+                <th>Units<!--project_deliverable_count--></th>
+                <th>DEPP ID<!--project_depp_key--></th>
+                <th>VML ID<!--project_vml_job_number--></th>                
+                <th>Estimated Hrs<!--project_estimated_hours--></th>
+                <th>Utilized Hrs<!--project_utilization_hours--></th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+              <tr class="filterInput">
+                <td><input type="text" name="project_id" value="" class="search_init" /></td>
+                <td><input type="text" name="project_name" value="" class="search_init" /></td>
+                <td><input type="text" name="project_brand_name" value="" class="search_init" /></td>
+                <td><input type="text" name="project_client" value="" class="search_init" /></td>
+                <td><input type="text" name="project_deliverable_type" value="" class="search_init" /></td>
+                <td><input type="text" name="project_deliverable_count" value="" class="search_init" /></td>
+                <td><input type="text" name="project_depp_key" value="" class="search_init" /></td>
+                <td><input type="text" name="project_vml_job_number" value="" class="search_init" /></td>
+                <td><input type="text" name="Status" value="" class="search_init" /></td>
+                <td><input type="text" name="project_estimated_hours" value="" class="search_init" /></td>
+                <td><input type="text" name="project_utilization_hours" value="" class="search_init" /></td>
+                <td><input type="text" name="Action" value="" class="search_init" /></td>                
               </tr>
             </thead>
             <tbody>
               <?php for($i=0;$i<$rows;$i++){?>
               <tr>
                 <td><?php echo $arr[$i][project_id];?></td>
-                <td><?php echo $arr[$i][project_name]; ?></td>
+                <td><?php echo "<a href='project_list.php?project_id=".$arr[$i][project_id]."&param=edit'>".$arr[$i][project_name]."</a>"; ?></td>
                 <td><?php echo $arr[$i][project_brand_name]; ?></td>
                 <td><?php echo getClientCompanyNameFrmId($arr[$i][project_client_id]); ?></td>
                 <td><?php echo $arr[$i][project_deliverable_type];?></td>
+                <td><?php echo $arr[$i][project_deliverable_count];?></td>
                 <td><?php echo $arr[$i][project_depp_key];?></td>
-                <td><?php echo $arr[$i][project_vml_job_number];?></td>
+                <td><?php echo $arr[$i][project_vml_job_number];?></td>                
+                <td><?php echo $arr[$i][project_estimated_hours];?></td>
+                <td><?php echo "<a target='_blank' href='report.php?submit=Filter&reportType=project&project_id[]=".$arr[$i][project_id]."'>".countProjectUtilizationHoursFrmProjectId($arr[$i][project_id])."</a>";?></td>
                 <td><?php echo getActiveStatus($arr[$i][project_active]);?></td>
                 <td>
                   <?php
@@ -316,5 +336,64 @@ $rows=mysql_num_rows($r);
       <?php include('footer.php');?>
     </div>
   </div>
+  <script type="text/javascript" charset="utf-8">
+	var asInitVals = new Array();
+	$(document).ready(function() {
+		oTable = $('#project_list_datatable').dataTable( {
+			"bPaginate": false,
+			"sPaginationType": "full_numbers",
+			"iDisplayLength" : 25,
+			"bStateSave": false,
+			"oLanguage": {
+				"sSearch": "Search all columns:"
+			},
+			"bSortCellsTop": true
+		} );
+
+		$("thead input").keyup( function () {
+			/* Filter on the column (the index) of this element */
+			oTable.fnFilter( this.value, $("thead input").index(this) );
+			var index=$("thead input").index(this);
+			index++;
+			//alert(index);
+			$("#project_list_datatable tbody tr td:nth-child("+index+")").removeHighlight();
+			$("#project_list_datatable tbody tr td:nth-child("+index+")").highlight($(this).val());
+		} );
+
+
+
+		/*
+		 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+		 * the footer
+		 */
+		$("thead input").each( function (i) {
+			asInitVals[i] = this.value;
+		} );
+		/*
+		 * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+		 * the footer
+		 */
+		$("thead input").each( function (i) {
+			asInitVals[i] = this.value;
+		} );
+
+		$("thead input").focus( function () {
+			if ( this.className == "search_init" )
+			{
+				this.className = "search_init_focus";
+				this.value = "";
+			}
+		} );
+
+		$("thead input").blur( function (i) {
+			if ( this.value == "" )
+			{
+				this.className = "search_init";
+				this.value = asInitVals[$("thead input").index(this)];
+			}
+		} );	
+
+	} );
+	</script>
 </body>
 </html>
