@@ -188,7 +188,7 @@ $rows=mysql_num_rows($r);
 														});
 												});
 										</script>
-										<input name="time_date" type="text" value="<?php echo addEditInputField('time_date'); ?>" size="20" class="validate[required]" readonly="readonly" />
+										<input name="time_date" type="text" value="<?php if(strlen(addEditInputField('time_date'))){echo addEditInputField('time_date');}else{echo date('Y-m-d');} ?>" size="20" class="validate[required]" readonly="readonly" />
                   </td>
                 </tr>
                 <tr>
