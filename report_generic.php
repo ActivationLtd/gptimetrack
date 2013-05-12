@@ -33,7 +33,7 @@ include('snippets/report/inc.searchquery.php');
               <th>Brand/Segment</th>
               <th>Production type</th>              
               <th><span style="width:80px; float:left">Date</span></th>
-              <th>Activity<br/> type</th>
+              <th>Activity type</th>
               <th>Hours</th>
               <th>Description</th>
               <th>Status</th>
