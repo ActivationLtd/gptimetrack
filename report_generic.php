@@ -85,7 +85,7 @@ include('snippets/report/inc.searchquery.php');
               <td><?php echo $arr[$i][project_deliverable_type]; ?></td>
               <td><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></td>
               <td><?php echo $arr[$i][project_activity_type]; ?></td>
-              <td><?php echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>".$arr[$i][time_total]."</a>";?></td>
+              <td><?php if($_REQUEST[basic_table]!='true'){echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>".$arr[$i][time_total]."</a>";}else{echo $arr[$i][time_id];}?></td>
               <td><?php echo $arr[$i][time_description];?></td>
               <td><?php echo $arr[$i][project_active]; ?></td> 
               <td><?php echo $arr[$i][client_company_name]; ?></td>                            
