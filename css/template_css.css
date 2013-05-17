@@ -823,7 +823,7 @@ tr.odd{
 }
 #right_m{
 	width:74%; 
-	float:right;
+	float: left;
 	padding: 10px 0px 0px 10px;
 }
 

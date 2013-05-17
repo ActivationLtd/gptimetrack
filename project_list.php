@@ -1,7 +1,7 @@
 <?php
 include_once("config.php");
 
-if(!hasPermission('project','add',$_SESSION[current_user_id])){
+if(!hasPermission('project','view',$_SESSION[current_user_id])){
 	echo "Permission denied";
 	exit();
 }
@@ -106,20 +106,21 @@ $rows=mysql_num_rows($r);
       <?php //include("snippets/account_management/account_management_menu.php");?>
       <div id="mid">
         <div class="clear"></div>
-        <div id="left_m">
+        <?php if(hasPermission('Project','add',$_SESSION[current_user_id])){?>
+        <div id="left_m">          
           <table width="100%">
-            <tr>
-              <td>
-                <h2>
-                  <?php echo ucfirst($param); ?>
-                  Project<br />
-                </h2>
-              </td>
-              <td align="right">
-                <a href="<?php echo $_SERVER['PHP_SELF']; ?>">[+] Add </a>
-              </td>
-            </tr>
-          </table>
+                  <tr>
+                    <td>
+                      <h2>
+                        <?php echo ucfirst($param); ?>
+                        Project<br />
+                      </h2>
+                    </td>
+                    <td align="right">
+                      <a href="<?php echo $_SERVER['PHP_SELF']; ?>">[+] Add </a>
+                    </td>
+                  </tr>
+          </table>          
           <?php printAlert($valid,$alert);?>
           <form action="#" method="post" enctype="multipart/form-data">
             <table width="100%">
@@ -267,8 +268,9 @@ $rows=mysql_num_rows($r);
             <?php
           }?>
           </form>
-          <div class="clear"></div>
+           <div class="clear"></div>
         </div>
+        <?php }?>
         <div id="right_m">
           <!--<h2>List of Customers</h2>-->
           <table id="project_list_datatable" width="100%">

@@ -1,6 +1,5 @@
 <?php
 include_once("config.php");
-
 if(!hasPermission('time','add',$_SESSION[current_user_id])){
 	echo "Permission denied";
 	exit();

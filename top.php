@@ -10,25 +10,25 @@
   if($_SESSION[logged]){
 
 		//echo "<a class='homepage_menu topmenu_item' href='index.php'><img src='images/home-menu-icon.png' align='middle' /> Home</a>"; 
-		if(hasPermission('security_assignment','add',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item' href='time_list.php'><img src='images/security-assignment.png' align='middle' /> Time</a> ";
+		if(hasPermission('time','add',$_SESSION[current_user_id])){
+			echo "<a class='homepage_menu topmenu_item' href='time_list.php'><img src='images/security-assignment.png' align='middle' /> Time </a> ";
 		}
 	
 		if(hasPermission('client','view',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item'href='client_list.php'><img src='images/registered-buyer-menu-icon.png' align='middle' />Client</a> ";
+			echo "<a class='homepage_menu topmenu_item'href='client_list.php'><img src='images/registered-buyer-menu-icon.png' align='middle' />Client </a> ";
 		}
 		if(hasPermission('user','view',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item'href='user_list.php'><img src='images/users.png' align='middle' />User</a> ";
+			echo "<a class='homepage_menu topmenu_item'href='user_list.php'><img src='images/users.png' align='middle' />User </a> ";
 		}
 	
-		if(hasPermission('project','add',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item' href='project_list.php'><img src='images/site.png' align='middle' />Projects</a> ";
+		if(hasPermission('project','view',$_SESSION[current_user_id])){
+			echo "<a class='homepage_menu topmenu_item' href='project_list.php'><img src='images/site.png' align='middle' />Projects </a> ";
 		}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a class='homepage_menu topmenu_item' href='report.php'><img src='images/security-assignment.png' align='middle' /> Report</a> ";
+  		echo "<a class='homepage_menu topmenu_item' href='report.php'><img src='images/security-assignment.png' align='middle' /> Report </a> ";
   	}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a class='homepage_menu topmenu_item' href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report GP format</a> ";
+  		echo "<a class='homepage_menu topmenu_item' href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report GP format </a> ";
   	}
 	  
   }?>
