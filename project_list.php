@@ -341,13 +341,12 @@ $rows=mysql_num_rows($r);
 	$(document).ready(function() {
 		oTable = $('#project_list_datatable').dataTable( {
 			"bPaginate": false,
-			"sPaginationType": "full_numbers",
-			"iDisplayLength" : 25,
 			"bStateSave": false,
 			"oLanguage": {
 				"sSearch": "Search all columns:"
 			},
-			"bSortCellsTop": true
+			"bSortCellsTop": true,
+			"aaSorting": [[ 0, "desc" ]]
 		} );
 
 		$("thead input").keyup( function () {
