@@ -112,11 +112,16 @@ $rows=mysql_num_rows($r);
 <html>
 <head>
 <?php include_once('inc.head.php')?>
+<style>
+thead{background-color:#000000; color:#FFF;}
+.dataTable{margin:10px 0px 0px;}
+</style>
 </head>
 <body>
   <div id="wrapper">
     <div id="container">
-      <div id="top1">
+      <div id="top1" style="text-align:center;">
+      	<img src="images/time_team_hogarth.png" />
         <?php include('top.php');?>
       </div>
       <?php //include("snippets/account_management/account_management_menu.php");?>

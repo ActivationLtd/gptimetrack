@@ -53,55 +53,44 @@ if(isset($_POST[Submit])){
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html>
 <head>
 <?php include_once('inc.head.php')?>
+<style>
+.containerLogin{margin: 0 auto; padding: 250px 0 100px; width: 660px;}
+input{float:none; width:300px; height:35px;font-size:16px;}
+input.button{float:none;}
+.formError .formErrorContent, .formError .formErrorArrow div {background-color:#000000;}
+</style>
 </head>
 
 <body>
 <div id="wrapper">
-  <div id="container">
-    <div id="top1">
-      <?php include('top.php');?>
-    </div>
-    <div id="mid">
-      <div class="alert">
-			<?php if(isset($_POST[Submit])){
-        printAlert($valid,$alert);
-      }					
-      ?>
-      </div>
-      <form action="" method="post" name="admin_login_form">
-        <div style="float:left">
-          <h2>User Login</h2>
-          Please input correct username and password to access they system.<br>
-          <table width="586" >
-            <tr>
-              <td width="91">&nbsp;</td>
-              <td width="495">&nbsp;</td>
-            </tr>
-            <tr>
-              <td><strong>Username</strong></td>
-              <td><input type="text" name="user_name" class="validate[required]" /></td>
-            </tr>
-            <tr>
-              <td><strong>Password</strong></td>
-              <td><input type="password" name="user_password" class="validate[required]" /></td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><input class="button bgblue" type="submit" name="Submit" value="Submit" />
-                <input class="button bgblue" type="reset" name="Submit2" value="Reset" /></td>
-            </tr>
-          </table>
-        </div>
+  <div class="containerLogin">      
+      <form action="" method="post" name="admin_login_form">        
+          <img src="images/team-hogarth-logo.png"/>          
+          <table width="100%" >            
+            <tr>              
+                <td align="center">
+                	<h2>User Login</h2>
+                  <div class="alert"><?php if(isset($_POST[Submit])){printAlert($valid,$alert);}?></div>
+                  Please input your username and password to access they system.<br>
+                	<input type="text" name="user_name" class="validate[required]"  placeholder="Username"/>
+                </td>
+              </tr>
+              <tr>             
+                <td align="center"><input type="password" name="user_password" class="validate[required]"  placeholder="Password"/></td>
+              </tr>
+              <tr>             
+                <td align="center"><input class="button bgblue" type="submit" name="Submit" value="Submit" />
+                  <input class="button bgblue" type="reset" name="Submit2" value="Reset" /></td>
+              </tr>
+            </table>          
+       
       </form>
     </div>
   </div>
-  <div id="footer">
-    <?php include('footer.php');?>
-  </div>
+  <div id="footer"><?php include('footer.php');?></div>
 </div>
 </body>
 </html>
