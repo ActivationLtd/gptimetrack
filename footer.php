@@ -1,9 +1,6 @@
-<!--
-<div align="center">Copyright &copy; 2009 Amader gram Breast Care | Powered by <a href="http://www.bdosn.org" target="_blank">BdOSN</a> 
-<br>
-website developed by <a href="http://www.opensolutionsbd.com">OpenSolutionsbd.com</a> <br>
-</div>
--->
+
+<div align="center">This Page is Best Viewed with Mozilla Firefox. Copyright &copy; 2012 <a href="http://www.graphicpeoplestudio.com" target="_blank">GraphicPeople Ltd</a>. All Rights Reserved</div>
+
 <div class="debug">
 <?php 
 /*
