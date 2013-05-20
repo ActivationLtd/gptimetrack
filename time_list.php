@@ -125,8 +125,8 @@ $rows=mysql_num_rows($r);
   <div id="wrapper">
     <div id="container">
       <div id="top1" style="text-align:center;">
-      	<img src="images/time_team_hogarth.png" />
-        <?php include('top.php');?>
+      	<img src="images/time_team_hogarth.png" /><br/>
+        <div style="width:825px; text-align:center; margin:0 auto;"><?php include('top.php');?></div>
       </div>
       <?php //include("snippets/account_management/account_management_menu.php");?>
       <div id="mid">
