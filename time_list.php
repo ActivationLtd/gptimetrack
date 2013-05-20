@@ -96,15 +96,19 @@ if(isset($_POST[submit])){
 
 /*******************************************/
 if($time_id){
-	$sql = "SELECT * FROM time WHERE time_id='$time_id'";
+	$sql = "SELECT * FROM time WHERE time_id='$time_id' ";
 	$r = mysql_query($sql)or die(mysql_error()."<b>Query:</b><br>___<br>$sql<br>");
 	$a = mysql_fetch_assoc($r);
 	$rows=mysql_num_rows($r);
 }
-$extended_query = "WHERE time_user_id='".$_SESSION['current_user_id']."' ";
+
+$startdate=date("Y-m-d", strtotime("-2 month") ) ;
+$extended_query = "WHERE time_user_id='".$_SESSION['current_user_id']."' AND time_date>'$startdate'  ";
 
 $sql = "SELECT * FROM time ". $extended_query;
+//echo "<b>Query:</b><br>___<br>$sql<br>";
 $r = mysql_query($sql)or die(mysql_error()."<b>Query:</b><br>___<br>$sql<br>");
+
 $arr = mysql_fetch_rowsarr($r);
 $rows=mysql_num_rows($r);
 ?>
@@ -113,7 +117,7 @@ $rows=mysql_num_rows($r);
 <head>
 <?php include_once('inc.head.php')?>
 <style>
-thead{background-color:#000000; color:#FFF;}
+#datatable > thead{background-color:#000000; color:#FFF;}
 .dataTable{margin:10px 0px 0px;}
 </style>
 </head>
@@ -178,7 +182,7 @@ thead{background-color:#000000; color:#FFF;}
                 <tr>
                   <td>
                     time_total:<br/>
-                    <input name="time_total" type="text" value="<?php echo addEditInputField('time_total'); ?>" size="30" maxlength="60" class="validate[required]" />
+                    <input name="time_total" type="text" value="<?php echo addEditInputField('time_total'); ?>" size="30" maxlength="60" class="validate[required,custom[number]]" />
                   </td>
                 </tr>
                 <tr>

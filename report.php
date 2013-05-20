@@ -59,7 +59,7 @@ include('snippets/report/inc.searchquery.php');
             <tr id="<?php echo $arr[$i][uid]; ?>" >
               <td><span style="width:80px; float:left"><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></span></td>
               <td><?php echo "W" . date("W", strtotime($arr[$i][time_date])) . ""; ?></td>
-              <td><?php echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>".$arr[$i][time_total]."</a>";?></td>
+              <td><?php if($_REQUEST[basic_table]=='true'){echo $arr[$i][time_total];}else{echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>".$arr[$i][time_total]."</a>";}?></td>
               <td><?php echo $arr[$i][client_company_name]; ?></td>
               <td><?php echo $arr[$i][project_brand_name]; ?></td>
               <td><?php echo $arr[$i][project_name]; ?></td>
