@@ -322,7 +322,7 @@ $rows=mysql_num_rows($r);
                   <?php
                     if(hasPermission('project', 'edit', $_SESSION[current_user_id])){
                   	//if($arr[$i][user_first_name]!='superadmin'){
-											echo "<a href='project_list.php?project_id=".$arr[$i][project_id]."&param=edit'>view</a>";
+											echo "<a href='project_list.php?project_id=".$arr[$i][project_id]."&param=edit'>Edit</a>";
 											//}
 										}
 										?>

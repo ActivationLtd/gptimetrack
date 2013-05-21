@@ -124,9 +124,8 @@ $rows=mysql_num_rows($r);
 <body>
   <div id="wrapper">
     <div id="container">
-      <div id="top1" style="text-align:center;">
-      	<img src="images/time_team_hogarth.png" /><br/>
-        <div style="width:825px; text-align:center; margin:0 auto;"><?php include('top.php');?></div>
+      <div id="top1">
+      	<?php include('top.php');?>
       </div>
       <?php //include("snippets/account_management/account_management_menu.php");?>
       <div id="mid">
@@ -260,7 +259,7 @@ $rows=mysql_num_rows($r);
                   <?php
                     if(hasPermission('time', 'edit', $_SESSION[current_user_id])){
                   	//if($arr[$i][user_first_name]!='superadmin'){
-											echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>Update</a>";
+											echo "<a href='time_list.php?time_id=".$arr[$i][time_id]."&param=edit'>Edit</a>";
 											//}
 										}
 										 if(hasPermission('time', 'edit', $_SESSION[current_user_id])){

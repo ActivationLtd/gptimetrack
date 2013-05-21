@@ -1,9 +1,13 @@
+<img src="images/time_team_hogarth.png" /><br/>
+<div style="width:825px; text-align:center; margin:0 auto;">
 <div id="header">
+<!--
 <div class="logo">
   <h1><?php echo $app_name;?></h1>
   <div class="clear"></div>
   <?php //echo $company_name;?>
 </div>
+-->
 <div id="top2">
 <div id="topmenu">
 <?php 
@@ -35,40 +39,17 @@
   	}
 	  
   }?>
-
-
-
   </div>
-
-        
-
-
-
 </div>
-
-
-
-  
-
   <div class="user_info">
-
     <?php if($_SESSION[logged]){
-
 		echo "Welcome! <b>".$_SESSION[current_user_fullname]; 
-
 		//echo " [L:".currentUserLevel()." | T:".currentUserTypeId()."]";
-
 		echo "</b><br><a href=\"logout.php\">logout</a><br>";
-
 		echo date("F j, Y"); 
-
 	}?>
-
   </div>
-
 </div>
-
 <div style="clear:both;"></div>
-
 <div class="clear"></div>
-
+</div>
