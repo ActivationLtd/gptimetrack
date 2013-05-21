@@ -1,7 +1,7 @@
 <?php
 include_once('inc.functions.appspecific.temp.php');
 
-$brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others");
+$brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others","SEAT","HTC","HP","Grant Thorton","Corsodyl","HSBC");
 $deliverable_type_array=array("General flash banner", "Rich media flash banner", "Static banner", "Edm", "Website", "Others");
 $activity_type_array=array("Localization", "Adaptation", "Localization,Adaptation", "Master Development", "Master Development,Localization,Adaptation", "Others");
 $user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer", "QA", "Depp administration", "Others");

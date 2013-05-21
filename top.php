@@ -30,6 +30,9 @@
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
   		echo "<a class='homepage_menu topmenu_item' href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report GP format </a> ";
   	}
+		if(hasPermission('project','add',$_SESSION[current_user_id])){
+  		echo "<a class='homepage_menu topmenu_item' href='report_hogarth_London.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth London</a> ";
+  	}
 	  
   }?>
 
