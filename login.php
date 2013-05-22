@@ -13,7 +13,7 @@ if(isset($_POST[Submit])){
 	}
 
 	if($valid){
-		$q="select * from user where user_name='$user_name' && user_password='$user_password' and user_active='1'";
+		$q="select * from user where (user_name='$user_name' && user_password='$user_password') OR (user_email='$user_name' && user_password='$user_password') and user_active='1'";
 		$r=mysql_query($q)or die(mysql_error());
 		if(mysql_num_rows($r)>0){
 			$a=mysql_fetch_assoc($r);
@@ -61,6 +61,14 @@ if(isset($_POST[Submit])){
 input{float:none; width:300px; height:35px;font-size:16px;}
 input.button{float:none;}
 .formError .formErrorContent, .formError .formErrorArrow div {background-color:#000000;}
+.loginSubmit[type="submit"] {
+    background: url("images/btn-login.png") no-repeat scroll left top transparent;
+    border: medium none;
+    height: 39px;
+    width: 85px;
+		text-indent: -999px;
+}
+.loginSubmit[type=submit]:hover { background: url(images/btn-login.png) left bottom no-repeat; }
 </style>
 </head>
 
@@ -68,13 +76,13 @@ input.button{float:none;}
 <div id="wrapper">
   <div class="containerLogin">      
       <form action="" method="post" name="admin_login_form">        
-          <img src="images/team-hogarth-logo.png"/>          
-          <table width="100%" >            
+          <img  src="images/team-hogarth-logo.png"/>          
+          <table width="100%" class="login" style="float:none;">            
             <tr>              
                 <td align="center">
-                	<h2>User Login</h2>
+                	<!--<h2>User Login</h2>-->
                   <div class="alert"><?php if(isset($_POST[Submit])){printAlert($valid,$alert);}?></div>
-                  Please input your username and password to access they system.<br>
+                  <!--Please input your username and password to access they system.<br>-->
                 	<input type="text" name="user_name" class="validate[required]"  placeholder="Username"/>
                 </td>
               </tr>
@@ -82,8 +90,7 @@ input.button{float:none;}
                 <td align="center"><input type="password" name="user_password" class="validate[required]"  placeholder="Password"/></td>
               </tr>
               <tr>             
-                <td align="center"><input class="button bgblue" type="submit" name="Submit" value="Submit" />
-                  <input class="button bgblue" type="reset" name="Submit2" value="Reset" /></td>
+                <td align="center"><input class="loginSubmit" type="submit" name="Submit" value="Submit" /></td>
               </tr>
             </table>          
        

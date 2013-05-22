@@ -230,6 +230,9 @@ img {
 	clear:both;	
 	margin:30px 0;
 	width:auto;
+	color: #969696;
+	font-size: 10px;
+	text-align: center;
 }
 h1 {
 	font-family: 'bebas_neueregular',Verdana, "Times New Roman", Times, serif;
@@ -854,3 +857,4 @@ tr.odd{
 		/* add padding to account for vertical scrollbar */
 		padding-right: 20px;
 	}
+table.login{margin-top:45px;}
