@@ -69,6 +69,10 @@ input.button{float:none;}
 		text-indent: -999px;
 }
 .loginSubmit[type=submit]:hover { background: url(images/btn-login.png) left bottom no-repeat; }
+input:focus, textarea:focus {
+    background-color: #FFFFFF;
+    border: 1px solid #00B0F0;
+}
 </style>
 </head>
 

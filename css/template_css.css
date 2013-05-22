@@ -234,6 +234,11 @@ img {
 	font-size: 10px;
 	text-align: center;
 }
+
+#footer { font-size: 12px; }
+#footer a { font-size: 12px; color: #323232; text-decoration: underline; }
+#footer a:hover { font-size: 12px; color: #f15000; text-decoration: underline; }
+
 h1 {
 	font-family: 'bebas_neueregular',Verdana, "Times New Roman", Times, serif;
 	font-size: 30px;
@@ -408,6 +413,7 @@ textarea {
 	font-size:11px;
 
 }
+
 label{
 	margin:3px 0px 0px 0px;
 }

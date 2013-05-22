@@ -119,6 +119,7 @@ $rows=mysql_num_rows($r);
 <style>
 #datatable > thead{background-color:#000000; color:#FFF;}
 .dataTable{margin:10px 0px 0px;}
+.ui-combobox, .ui-combobox-input{width:220px;}
 </style>
 </head>
 <body>
@@ -149,59 +150,68 @@ $rows=mysql_num_rows($r);
             <table width="100%">
               <tr>
                 <td>
-                  time_project_id:<br/> 
+                  User:<br/> 
+									<?php	
+									if(currentUserIsGeneralUser()){
+										$additionalParam=" disabled='disabled'";
+										echo getUserFullNameFrmId($_SESSION['current_user_id']);
+									?>
+                  	<input name="time_user_id" value="<?=$_SESSION['current_user_id']?>" type="hidden" />
+                  <?php	
+									}else{
+										$selectedId = addEditInputField('time_user_id');
+										if(!strlen($selectedId)){
+											$selectedId=$_SESSION['current_user_id'];
+										}
+										//echo "selectedId".$selectedId;
+										$customQuery = " WHERE user_active='1' ";
+										createSelectOptions('user', 'user_id', 'user_fullname', $customQuery, $selectedId, 'time_user_id', "class='validate[required] selectmenu' $additionalParam");
+									}
+									?>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <!--time_project_id-->
+                  Project:<br/> 
 									<?php									
 									$selectedId = addEditInputField('time_project_id');
 									$customQuery = " WHERE project_active='1' ";
 									createProjectSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "id='combobox' class='validate[required]'");
 									?>
                 </td>
-              </tr>
-              <tr>
-                <td>
-                  time_user_id:<br/> 
-									<?php	
-									if(currentUserIsGeneralUser()){
-										$additionalParam=" disabled='disabled'";
-									?>
-                  	<input name="time_user_id" value="<?=$_SESSION['current_user_id']?>" type="hidden" />
-                  <?php	
-									}
-									$selectedId = addEditInputField('time_user_id');
-									if(!strlen($selectedId)){
-										$selectedId=$_SESSION['current_user_id'];
-									}
-									//echo "selectedId".$selectedId;
-									$customQuery = " WHERE user_active='1' ";
-									createSelectOptions('user', 'user_id', 'user_fullname', $customQuery, $selectedId, 'time_user_id', "class='validate[required] selectmenu' $additionalParam");
-									
-									?>
-                </td>
-              </tr>
                 <tr>
                   <td>
-                    time_total:<br/>
-                    <input name="time_total" type="text" value="<?php echo addEditInputField('time_total'); ?>" size="30" maxlength="60" class="validate[required,custom[number]]" />
+                    <table>
+                    	<tr>
+                      	<td>
+                        	<!--time_date -->
+                          Date:<br/> 
+													<script>
+                              $(function() {
+                                  $("input[name=time_date]").datepicker({
+                                      dateFormat: 'yy-mm-dd' ,
+                                      separator: ' ',
+                                  });
+                              });
+                          </script>
+                          <input name="time_date" type="text" value="<?php if(strlen(addEditInputField('time_date'))){echo addEditInputField('time_date');}else{echo date('Y-m-d');} ?>" size="10" class="validate[required]" readonly="readonly" />
+                        </td>
+                        <td>
+                         	<!--time_total-->
+                          Hour(s):<br/>
+                    			<input name="time_total" type="text" value="<?php echo addEditInputField('time_total'); ?>" size="4" maxlength="4" class="validate[required,custom[number]]" />
+                        </td>
+                      </tr>
+                    </table>                    
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    time_date :<br/> 
-										<script>
-												$(function() {
-														$("input[name=time_date]").datepicker({
-																dateFormat: 'yy-mm-dd' ,
-																separator: ' ',
-														});
-												});
-										</script>
-										<input name="time_date" type="text" value="<?php if(strlen(addEditInputField('time_date'))){echo addEditInputField('time_date');}else{echo date('Y-m-d');} ?>" size="20" class="validate[required]" readonly="readonly" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    time_description:<br/>
-                    <textarea name="time_description" cols="30" rows="6" class=""><?php echo addEditInputField('time_description'); ?></textarea>
+                    <!--time_description-->
+                    Task Details:<br/>
+                    <textarea name="time_description" cols="30" rows="6" class="validate[required]"><?php echo addEditInputField('time_description'); ?></textarea>
                   </td>
                 </tr>
                 <!--
