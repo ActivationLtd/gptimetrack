@@ -194,12 +194,14 @@ $rows=mysql_num_rows($r);
 										<input name="project_end_datetime" type="text" value="<?php echo addEditInputField('project_end_datetime'); ?>" size="20" class="validate[required]" readonly="readonly" />
                   </td>
                 </tr>
+                <!--
                 <tr>
                   <td>
                     project_bucket_name:<br/>
                     <input name="project_bucket_name" type="text" value="<?php echo addEditInputField('project_bucket_name'); ?>" size="30" maxlength="60" class="validate[required]" />
                   </td>
                 </tr>
+                -->
                 <tr>
                   <td>
                    project_estimated_hours:<br/>
@@ -238,7 +240,13 @@ $rows=mysql_num_rows($r);
                 <tr>
                   <td>
                     project_vml_job_number:<br/>
-                   <input name="project_vml_job_number" type="text" value="<?php echo addEditInputField('project_vml_job_number'); ?>" size="30" maxlength="60" class="validate[required]" />
+                   <input name="project_vml_job_number" type="text" value="<?php echo addEditInputField('project_vml_job_number'); ?>" size="30" maxlength="60" class="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    project_hogarth_job_number:<br/>
+                   <input name="project_hogarth_job_number" type="text" value="<?php echo addEditInputField('project_hogarth_job_number'); ?>" size="30" maxlength="60" class="" />
                   </td>
                 </tr>
                 <tr>
@@ -254,10 +262,8 @@ $rows=mysql_num_rows($r);
                     $selectedId=addEditInputField('project_active');
                     $customQuery = " WHERE option_group='active_status' AND option_active='1' ";
 										createSelectOptions('options','option_value','option_name',$customQuery,$selectedId,'project_active', "  class='validate[required]'");?>
-
                   </td>
                 </tr>
-
             </table>
             <input name="submit" type="submit" class="bgblue button" value="Save" />
             <input name="reset" type="reset" class="bgblue button" value="Reset" />
