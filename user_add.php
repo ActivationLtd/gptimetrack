@@ -4,6 +4,13 @@ $valid=true;
 $alert=array();
 $param=$_REQUEST['param'];
 $user_id=$_REQUEST[user_id];
+if($_SESSION['current_user_type_id']=='3'){
+	//echo "1-----------";
+	if($user_id!=$_SESSION['current_user_id']){
+		//echo "2-----------";
+		die("You don't have permission");
+	}
+}
 
 if($param=='add'||$param=='edit'){
 	if(isset($_POST[submit])){
@@ -145,26 +152,34 @@ if(mysql_num_rows($r)){$a=mysql_fetch_assoc($r);}
           <?php }/*******************************************/ ?>
             <td>Email:</td>
             <td><input name="user_email" type="text" value="<?php echo addEditInputField('user_email'); ?>" size="30" maxlength="60"  class="validate[required,custom[email]]"/>
-              <span class="small">E-mail notification will be sent to this address</span></td></td>
+              <span class="small">E-mail notification will be sent to this address</span></td>
           </tr>
           <tr>
             <td>User type:</td>
             <td><?php
+						if($_SESSION['current_user_type_id']=='3'){
+							echo getUserTypeName($_SESSION['current_user_type_id']);
+						}else{
                 $selectedId=addEditInputField('user_type_id');
-				$customQuery=" where user_type_active='1'";
-				$parameter="class=validate[required] ";
-				if($a['user_name']=='superadmin'){
-					$parameter.=" disabled='disabled' ";
-				}
-                createSelectOptions('user_type','user_type_id','user_type_name','$customQuery',$selectedId,'user_type_id',$parameter);
-                ?></td>
+								$customQuery=" where user_type_active='1'";
+								$parameter="class=validate[required] ";
+								if($a['user_name']=='superadmin'){
+									$parameter.=" disabled='disabled' ";
+						}
+						createSelectOptions('user_type','user_type_id','user_type_name','$customQuery',$selectedId,'user_type_id',$parameter);
+						}
+						?></td>
           </tr>
           <tr>
             <td><strong>User Role</strong></td>
             <td>
             <?php
-						$selectedId=addEditInputField('user_role_name');                 
-						createSelectOptionsFrmArray($user_roles_array,$selectedId,"user_role_name"," class='validate[required]'")
+						if($_SESSION['current_user_type_id']=='3'){
+							echo $a['user_role_name'];
+						}else{
+							$selectedId=addEditInputField('user_role_name');                 
+							createSelectOptionsFrmArray($user_roles_array,$selectedId,"user_role_name"," class='validate[required]'");
+						}
 						?>
             </td>
           </tr>
@@ -178,18 +193,18 @@ if(mysql_num_rows($r)){$a=mysql_fetch_assoc($r);}
           </tr>
           <tr>
             <td>User Employee Id</td>
-            <td><input name="user_employee_id" type="text" value="<?php echo addEditInputField('user_employee_id'); ?>" size="30" maxlength="60"  class=""/></td>
-            <td>            
+            <td><input name="user_employee_id" type="text" value="<?php echo addEditInputField('user_employee_id'); ?>" size="30" maxlength="60"  class=""/></td>                      
           </tr>
           <tr>
             <td>User Joining Date</td>
-            <td><input name="user_joining_date" type="text" value="<?php echo addEditInputField('user_joining_date'); ?>" size="30" maxlength="60"  class="validate[custom[date]]"/></td>
-            <td>            
+            <td><input name="user_joining_date" type="text" value="<?php echo addEditInputField('user_joining_date'); ?>" size="30" maxlength="60"  class="validate[custom[date]]"/>
+                     
           </tr>
           <tr>
             <td>Phone:</td>
             <td><input name="user_phone" type="text" value="<?php echo addEditInputField('user_phone'); ?>" size="30" maxlength="60"  class="validate[required]"/>
-            	<span class="small">SMS notification will be sent to this number. Use a valid number format(i.e +61...)</span></td></td>
+            	<!--<span class="small">SMS notification will be sent to this number. Use a valid number format(i.e +61...)</span>-->
+            </td>
           </tr>
           <tr>
             <td>Other Information:</td>

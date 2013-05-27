@@ -44,7 +44,7 @@
   <div class="user_info">
     <?php if($_SESSION[logged]){
 		echo "Welcome! <b>".$_SESSION[current_user_fullname]; 		
-		echo "</b><br><a href=\"logout.php\">logout</a><br>";
+		echo "</b><br><a href=\"user_add.php?user_id=".$_SESSION[current_user_id]."&param=edit\">My Account</a> | <a href=\"logout.php\">logout</a><br>";
 		echo date("F j, Y"); 
 	}?>
   </div>
