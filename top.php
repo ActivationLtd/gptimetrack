@@ -32,7 +32,7 @@
   		echo "<a  href='report.php'><img src='images/security-assignment.png' align='middle' /> Report </a> ";
   	}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a  href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth NY </a> ";
+  		echo "<a  href='report_hogarth_NY.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth NY </a> ";
   	}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
   		echo "<a  href='report_hogarth_London.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth London </a> ";
