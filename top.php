@@ -13,29 +13,29 @@
 <?php 
   if($_SESSION[logged]){
 
-		//echo "<a class='homepage_menu topmenu_item' href='index.php'><img src='images/home-menu-icon.png' align='middle' /> Home</a>"; 
+		//echo "<a  href='index.php'><img src='images/home-menu-icon.png' align='middle' /> Home</a>"; 
 		if(hasPermission('time','add',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item' href='time_list.php'><img src='images/security-assignment.png' align='middle' /> Time </a> ";
+			echo "<a  href='time_list.php'><img src='images/security-assignment.png' align='middle' /> Time </a> ";
 		}
 	
 		if(hasPermission('client','view',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item'href='client_list.php'><img src='images/registered-buyer-menu-icon.png' align='middle' />Client </a> ";
+			echo "<a href='client_list.php'><img src='images/registered-buyer-menu-icon.png' align='middle' />Client </a> ";
 		}
 		if(hasPermission('user','view',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item'href='user_list.php'><img src='images/users.png' align='middle' />User </a> ";
+			echo "<a href='user_list.php'><img src='images/users.png' align='middle' />User </a> ";
 		}
 	
 		if(hasPermission('project','view',$_SESSION[current_user_id])){
-			echo "<a class='homepage_menu topmenu_item' href='project_list.php'><img src='images/site.png' align='middle' />Projects </a> ";
+			echo "<a  href='project_list.php'><img src='images/site.png' align='middle' />Projects </a> ";
 		}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a class='homepage_menu topmenu_item' href='report.php'><img src='images/security-assignment.png' align='middle' /> Report </a> ";
+  		echo "<a  href='report.php'><img src='images/security-assignment.png' align='middle' /> Report </a> ";
   	}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a class='homepage_menu topmenu_item' href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report GP format </a> ";
+  		echo "<a  href='report_generic.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth NY </a> ";
   	}
 		if(hasPermission('project','add',$_SESSION[current_user_id])){
-  		echo "<a class='homepage_menu topmenu_item' href='report_hogarth_London.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth London</a> ";
+  		echo "<a  href='report_hogarth_London.php'><img src='images/security-assignment.png' align='middle' /> Report Hogarth London </a> ";
   	}
 	  
   }?>
@@ -43,8 +43,7 @@
 </div>
   <div class="user_info">
     <?php if($_SESSION[logged]){
-		echo "Welcome! <b>".$_SESSION[current_user_fullname]; 
-		//echo " [L:".currentUserLevel()." | T:".currentUserTypeId()."]";
+		echo "Welcome! <b>".$_SESSION[current_user_fullname]; 		
 		echo "</b><br><a href=\"logout.php\">logout</a><br>";
 		echo date("F j, Y"); 
 	}?>

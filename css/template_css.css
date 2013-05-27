@@ -431,10 +431,7 @@ div.search_result {
 .red {
 	color:#FF0000;
 }
-.homepage_menu {
-	height: 40px;
-	width: 100px;
-}
+
 tr.firstrow {
 	padding:3px 0;
 }
@@ -762,11 +759,12 @@ div.message_form {
 	float:left;
 	width:80%;
 }
-.topmenu_item {
+#topmenu a {
 	float: left;
 	height: 25px;
 	width: auto;
 }
+
 ul.secondarymenu, ul.secondarymenu li {
 	list-style:none;
 	float:left;
