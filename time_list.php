@@ -150,7 +150,7 @@ $rows=mysql_num_rows($r);
             <table width="100%">
               <tr>
                 <td>
-                  User:<br/> 
+                  User:  
 									<?php	
 									if(currentUserIsGeneralUser()){
 										$additionalParam=" disabled='disabled'";
