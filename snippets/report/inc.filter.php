@@ -13,10 +13,11 @@
         <td>
         	Project <br />
           <?php
-					$selectedIdCsv = $project_id_csv;
-					$customQuery = " WHERE project_active='1' ";
-					createMultiSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedIdCsv, 'project_id[]', " multiple='multiple' class='multiselectdd'");
-					?>
+			$selectedIdCsv = $project_id_csv;
+			$customQuery = " WHERE project_active='1' ";
+			createMultiSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedIdCsv, 'project_id[]', " multiple='multiple' class='multiselectdd'");
+			createSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "id='combobox' class='validate[required]'");
+			?>
         </td>
         <td>
         	User <br />
@@ -29,8 +30,8 @@
         </td>
         <td>
         	Start date <br />
-          <input name="date_start" type="text" value="<?php echo addEditInputField('date_start'); ?>" size="20" readonly="readonly" style="float: none; width:80px;" />
-          <input name="date_start_datetime" id="date_start_datetime" type="hidden" value="<?php echo addEditInputField('date_start_datetime'); ?>" size="20" class="" readonly="readonly" />
+          <input name="date_start" type="text" value="<?php echo addEditInputField('date_start'); ?>" size="20" readonly style="float: none; width:80px;" />
+          <input name="date_start_datetime" id="date_start_datetime" type="hidden" value="<?php echo addEditInputField('date_start_datetime'); ?>" size="20" class="" readonly />
           <script>
 							$("input[name=date_start]").datepicker({
 									dateFormat: "dd-mm-yy",
@@ -44,8 +45,8 @@
         </td>
         <td>
         	End date <br />
-          <input name="date_end" type="text" value="<?php echo addEditInputField('date_end'); ?>" size="20" class="" readonly="readonly" style="float: none;width:80px;" />
-          <input name="date_end_datetime" id="date_end_datetime" type="hidden" value="<?php echo addEditInputField('date_end_datetime'); ?>" size="20" class="" readonly="readonly" />
+          <input name="date_end" type="text" value="<?php echo addEditInputField('date_end'); ?>" size="20" class="" readonly style="float: none;width:80px;" />
+          <input name="date_end_datetime" id="date_end_datetime" type="hidden" value="<?php echo addEditInputField('date_end_datetime'); ?>" size="20" class="" readonly />
           <script>
 							$("input[name=date_end]").datepicker({
 									dateFormat: "dd-mm-yy",
