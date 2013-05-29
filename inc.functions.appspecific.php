@@ -1,11 +1,12 @@
 <?php
 include_once('inc.functions.appspecific.temp.php');
 
-$brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others","SEAT","HTC","HP","Grant Thorton","Corsodyl","HSBC","Mecca Bingo", "EPSON", "Brother");
-$deliverable_type_array=array("General flash banner", "Rich media flash banner", "Static banner", "Edm", "Website", "Others");
+$brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others","SEAT","HTC","HP","Grant Thorton","Corsodyl","HSBC","Mecca Bingo", "EPSON", "Brother","PM Meeting","Holiday","Internal Time","Leave","Training");
+$deliverable_type_array=array("Standard flash banner", "Rich media flash banner", "Static banner", "Edm", "Website", "Others");
 $activity_type_array=array("Localization", "Adaptation", "Localization,Adaptation", "Master Development", "Master Development,Localization,Adaptation", "Others");
-$user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer","Sr. Flash Designer","Flash Designer","Web Developer","Flash Developer", "QA Engineer", "Depp administration", "Others");
+$user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer","Web Developer -  HTML/Web Developer","Sr. Flash Designer","Flash Designer","Web Developer","Flash Developer", "QA Engineer", "Depp administration", "Others");
 $project_billing_type_array=array("Retained", "Non-retained");
+$time_activity_type_array=array("Project Management", "Development", "QA", "PM Meeting", "Holiday", "Internal Time", "Leave", "Training");
 $mail->AddCC("raihan.sikder@adpeople.com","Dev Team");
 
 $defaultPopUpConfirmationMsg="Please confirm the action by checking the box to the left.";

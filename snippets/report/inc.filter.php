@@ -14,8 +14,7 @@
         	Project <br />
           <?php
 			$selectedIdCsv = $project_id_csv;
-			$customQuery = " WHERE project_active='1' ";
-			createMultiSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedIdCsv, 'project_id[]', " multiple='multiple' class='multiselectdd'");
+			$customQuery = " WHERE project_active='1' ";			
 			createSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "id='combobox' class='validate[required]'");
 			?>
         </td>

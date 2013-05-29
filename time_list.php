@@ -203,6 +203,13 @@ $rows=mysql_num_rows($r);
                           Hour(s):<br/>
                     			<input name="time_total" type="text" value="<?php echo addEditInputField('time_total'); ?>" size="4" maxlength="4" class="validate[required,custom[number]]" />
                         </td>
+                        <td>
+                        	Task Type : <br />
+                          <?php
+													$selectedId=addEditInputField('time_activity_type');                 
+													createSelectOptionsFrmArray($time_activity_type_array,$selectedId,"time_activity_type"," class='validate[required]'")
+													?>
+                        </td>
                       </tr>
                     </table>                    
                   </td>
