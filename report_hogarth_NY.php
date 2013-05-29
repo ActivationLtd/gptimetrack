@@ -106,6 +106,7 @@ include('snippets/report/inc.searchquery.php');
 <script type="text/javascript" charset="utf-8">
 var asInitVals = new Array();
 $(document).ready(function() {
+	
 	oTable = $('#report_table').dataTable( {
 		"bPaginate": false,
 		"bStateSave": false,
@@ -115,6 +116,7 @@ $(document).ready(function() {
 		"bSortCellsTop": true,
 		"aaSorting": [[ 0, "desc" ]]
 	} );
+	
 
 	$("thead input").keyup( function () {
 		/* Filter on the column (the index) of this element */
@@ -122,8 +124,8 @@ $(document).ready(function() {
 		var index=$("thead input").index(this);
 		index++;
 		//alert(index);
-		$("#project_list_datatable tbody tr td:nth-child("+index+")").removeHighlight();
-		$("#project_list_datatable tbody tr td:nth-child("+index+")").highlight($(this).val());
+		$("#report_table tbody tr td:nth-child("+index+")").removeHighlight();
+		$("#report_table tbody tr td:nth-child("+index+")").highlight($(this).val());
 	} );
 
 

@@ -111,8 +111,8 @@ $(document).ready(function() {
 		var index=$("thead input").index(this);
 		index++;
 		//alert(index);
-		$("#project_list_datatable tbody tr td:nth-child("+index+")").removeHighlight();
-		$("#project_list_datatable tbody tr td:nth-child("+index+")").highlight($(this).val());
+		$("#report_table tbody tr td:nth-child("+index+")").removeHighlight();
+		$("#report_table tbody tr td:nth-child("+index+")").highlight($(this).val());
 	} );
 
 

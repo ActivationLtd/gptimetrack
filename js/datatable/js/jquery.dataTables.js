@@ -1235,12 +1235,22 @@
 						aApplied[i][j] = 1;
 		
 						/* Expand the cell to cover as many rows as needed */
-						while ( aoLocal[i+iRowspan] !== undefined &&
+						/*while ( aoLocal[i+iRowspan] !== undefined &&
 						        aoLocal[i][j].cell == aoLocal[i+iRowspan][j].cell )
 						{
 							aApplied[i+iRowspan][j] = 1;
 							iRowspan++;
+						}*/
+						
+						/* datatable fix by hadi */
+						while (typeof aoLocal[i + iRowspan] != 'undefined' &&
+							typeof aoLocal[i + iRowspan][j] != 'undefined' &&
+							aoLocal[i][j].cell == aoLocal[i+iRowspan][j].cell )
+						{
+							aApplied[i+iRowspan][j] = 1;
+							iRowspan++;
 						}
+						/* datatable fix by hadi */
 		
 						/* Expand the cell to cover as many columns as needed */
 						while ( aoLocal[i][j+iColspan] !== undefined &&
