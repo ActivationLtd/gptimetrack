@@ -13,9 +13,9 @@
         <td>
         	Project <br />
           <?php
-			$selectedIdCsv = $project_id_csv;
+			
 			$customQuery = " WHERE project_active='1' ";			
-			createSelectOptions('project', 'project_id', 'project_name', $customQuery, $selectedId, 'time_project_id', "id='combobox' class='validate[required]'");
+			createSelectOptions('project', 'project_id', 'project_name', $customQuery, $time_project_id, 'time_project_id', "id='combobox' class='validate[required]'");
 			?>
         </td>
         <td>

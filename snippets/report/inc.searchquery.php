@@ -8,9 +8,15 @@ if (count($_REQUEST[user_id])) {
     $user_id_csv = implode(',', $_REQUEST[user_id]);
     $parameterized_query.=" user_id in ($user_id_csv) AND ";
 }
+/*
 if (count($_REQUEST[project_id])) {
     $project_id_csv = implode(',', $_REQUEST[project_id]);
     $parameterized_query.=" project_id in ($project_id_csv) AND ";
+}
+*/
+if (strlen($_REQUEST[time_project_id])) {
+    $time_project_id = mysql_real_escape_string(trim($_REQUEST[time_project_id]));
+    $parameterized_query.=" time_project_id = '$time_project_id' AND ";
 }
 
 if (strlen($_REQUEST[date_start_datetime]) || strlen($_REQUEST[date_end_datetime])) {
