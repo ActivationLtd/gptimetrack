@@ -178,6 +178,7 @@ function createSelectOptions($dbtableName,$dbtableIdField,$dbtableValueField,$cu
 }
 
 function createSelectOptionsFrmArray($listArray,$selectedId,$name,$params){
+	$listArray=sort($listArray);
 	echo "<select name='$name' $params>";
 	echo "<option value=''>select</option>";
 	foreach($listArray as $item){
