@@ -322,7 +322,7 @@ $rows = mysql_num_rows($r);
                     <td><?php echo $arr[$i][project_depp_key]; ?></td>
                     <td><?php echo $arr[$i][project_vml_job_number]; ?></td>                
                     <td><?php echo $arr[$i][project_estimated_hours]; ?></td>
-                    <td><?php echo "<a target='_blank' href='report.php?submit=Filter&reportType=project&project_id=" . $arr[$i][project_id] . "'>" . countProjectUtilizationHoursFrmProjectId($arr[$i][project_id]) . "</a>"; ?></td>
+                    <td><?php echo "<a target='_blank' href='report.php?submit=Filter&reportType=project&time_project_id=" . $arr[$i][project_id] . "'>" . countProjectUtilizationHoursFrmProjectId($arr[$i][project_id]) . "</a>"; ?></td>
                     <td><?php echo getActiveStatus($arr[$i][project_active]); ?></td>
                     <td>
                       <?php
