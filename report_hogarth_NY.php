@@ -70,9 +70,9 @@ include('snippets/report/inc.searchquery.php');
             </thead>
             <tbody>
               <?php
-              $total_hours = 0;
-              $total_amount = 0;
+              $total_time = 0;              
               for ($i = 0; $i < $rows; $i++) {
+                $total_time += $arr[$i][time_total];              
                 ?>
                 <tr id="<?php echo $arr[$i][uid]; ?>" >
                   <td><?php echo $arr[$i][user_employee_id]; ?></td>
@@ -99,13 +99,15 @@ include('snippets/report/inc.searchquery.php');
                   <td><?php echo $arr[$i][project_vml_job_number]; ?></td>
                   <td><?php echo "W" . date("W", strtotime($arr[$i][time_date])) . ""; ?></td>
                   <td><?php echo $arr[$i][time_description]; ?></td>
-                </tr>
-<?php } ?>
+                </tr>                                            
+                  <?php                  
+              } ?>
             </tbody>
-          </table>        
+          </table>
         </div>
+        <?php echo "Total hours: $total_time <br/>";?>
         <div id="footer">
-<?php include('footer.php'); ?>
+          <?php include('footer.php'); ?>
         </div>
       </div>
     </div>

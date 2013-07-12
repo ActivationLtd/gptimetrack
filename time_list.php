@@ -246,23 +246,21 @@ $rows = mysql_num_rows($r);
             <table id="datatable_time" width="100%">
               <thead>
                 <tr>
-                  <th>time_id</th>
-                  <th>time_total</th>
                   <th>time_date</th>
-                  <th>time_user_id</th>
                   <th>time_project_id</th>
+                  <th>time_total</th>                  
+                  <th>time_user_id</th>                  
                   <th>time_description</th>
                   <th>time_activity_type</th>
                   <th>time_updated_datetime</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
-                <tr class="filterInput">
-                  <td><input type="text" name="time_id_search" value="" class="search_init" /></td>
-                  <td><input type="text" name="time_total_search" value="" class="search_init" /></td>
+                <tr class="filterInput">                  
                   <td><input type="text" name="time_date_search" value="" class="search_init" /></td>
-                  <td><input type="text" name="time_user_id_search" value="" class="search_init" /></td>
                   <td><input type="text" name="time_project_id_search" value="" class="search_init" /></td>
+                  <td><input type="text" name="time_total_search" value="" class="search_init" /></td>                  
+                  <td><input type="text" name="time_user_id_search" value="" class="search_init" /></td>                  
                   <td><input type="text" name="time_description_search" value="" class="search_init" /></td>                
                   <td><input type="text" name="time_activity_type_search" value="" class="search_init" /></td>                
                   <td><input type="text" name="time_updated_datetime_search" value="" class="search_init" /></td>
@@ -273,11 +271,10 @@ $rows = mysql_num_rows($r);
               <tbody>
                 <?php for ($i = 0; $i < $rows; $i++) { ?>
                   <tr>
-                    <td><?php echo $arr[$i][time_id]; ?></td>
-                    <td><?php echo $arr[$i][time_total]; ?></td>
                     <td><span style="width:80px; float:left"><?php echo $arr[$i][time_date]; ?></span></td>
-                    <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>
                     <td><?php echo getProjectNameFrmId($arr[$i][time_project_id]); ?></td>
+                    <td><?php echo $arr[$i][time_total]; ?></td>                    
+                    <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>                    
                     <td><?php echo $arr[$i][time_description]; ?></td>
                     <td><?php echo $arr[$i][time_activity_type]; ?></td>
                     <td><?php echo $arr[$i][time_updated_datetime]; ?></td>
