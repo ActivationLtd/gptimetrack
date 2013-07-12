@@ -252,6 +252,7 @@ $rows = mysql_num_rows($r);
                   <th>time_user_id</th>
                   <th>time_project_id</th>
                   <th>time_description</th>
+                  <th>time_activity_type</th>
                   <th>time_updated_datetime</th>
                   <th>Status</th>
                   <th>Action</th>
@@ -263,6 +264,7 @@ $rows = mysql_num_rows($r);
                   <td><input type="text" name="time_user_id_search" value="" class="search_init" /></td>
                   <td><input type="text" name="time_project_id_search" value="" class="search_init" /></td>
                   <td><input type="text" name="time_description_search" value="" class="search_init" /></td>                
+                  <td><input type="text" name="time_activity_type_search" value="" class="search_init" /></td>                
                   <td><input type="text" name="time_updated_datetime_search" value="" class="search_init" /></td>
                   <td><input type="text" name="Status_search" value="" class="search_init" /></td>
                   <td><input type="text" name="Action_search" value="" class="search_init" /></td>                  
@@ -277,6 +279,7 @@ $rows = mysql_num_rows($r);
                     <td><?php echo getUserFullNameFrmId($arr[$i][time_user_id]); ?></td>
                     <td><?php echo getProjectNameFrmId($arr[$i][time_project_id]); ?></td>
                     <td><?php echo $arr[$i][time_description]; ?></td>
+                    <td><?php echo $arr[$i][time_activity_type]; ?></td>
                     <td><?php echo $arr[$i][time_updated_datetime]; ?></td>
                     <td><?php echo getActiveStatus($arr[$i][time_active]); ?></td>
                     <td>
