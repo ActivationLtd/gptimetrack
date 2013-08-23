@@ -39,7 +39,7 @@ include('snippets/report/inc.searchquery.php');
                 <th>Status</th>
                 <th>Client</th>                            
                 <th>Depp</th>
-                <th>VML #</th>
+                <th>Client Job#</th>
                 <th>Week</th>              
                 <th>Description-details</th>
               </tr>
@@ -65,14 +65,14 @@ include('snippets/report/inc.searchquery.php');
                   <td><input type="text" name="VML_Job" value="" class="search_init" /></td>                
                   <td><input type="text" name="Desc_details" value="" class="search_init" /></td>                
                 </tr>
-                <?php }
+              <?php }
               ?>
             </thead>
             <tbody>
               <?php
-              $total_time = 0;              
+              $total_time = 0;
               for ($i = 0; $i < $rows; $i++) {
-                $total_time += $arr[$i][time_total];              
+                $total_time += $arr[$i][time_total];
                 ?>
                 <tr id="<?php echo $arr[$i][uid]; ?>" >
                   <td><?php echo $arr[$i][user_employee_id]; ?></td>
@@ -87,25 +87,36 @@ include('snippets/report/inc.searchquery.php');
                   <td><?php echo $arr[$i][project_deliverable_type]; ?></td>
                   <td><?php echo date('Y-m-d', strtotime($arr[$i][time_date])); ?></td>
                   <td><?php echo $arr[$i][project_activity_type]; ?></td>
-                  <td><?php if ($_REQUEST[basic_table] != 'true') {
-                echo "<a href='time_list.php?time_id=" . $arr[$i][time_id] . "&param=edit'>" . $arr[$i][time_total] . "</a>";
-              } else {
-                echo $arr[$i][time_total];
-              } ?></td>
+                  <td><?php
+                    if ($_REQUEST[basic_table] != 'true') {
+                      echo "<a href='time_list.php?time_id=" . $arr[$i][time_id] . "&param=edit'>" . $arr[$i][time_total] . "</a>";
+                    } else {
+                      echo $arr[$i][time_total];
+                    }
+                    ?></td>
                   <td><?php echo $arr[$i][time_activity_type]; ?></td>
                   <td><?php echo $arr[$i][project_active]; ?></td> 
                   <td><?php echo $arr[$i][client_company_name]; ?></td>                            
                   <td><?php echo $arr[$i][project_depp_key]; ?></td>
-                  <td><?php echo $arr[$i][project_vml_job_number]; ?></td>
+                  <td>
+                    <?php
+                    if (strlen($arr[$i][project_vml_job_number])) {
+                      echo "VML-".$arr[$i][project_vml_job_number]." ";
+                    }
+                    if (strlen($arr[$i][project_vml_job_number])) {
+                      echo "HOG-".$arr[$i][project_hogarth_job_number]." ";
+                    }
+                    ?>
+                  </td>
                   <td><?php echo "W" . date("W", strtotime($arr[$i][time_date])) . ""; ?></td>
                   <td><?php echo $arr[$i][time_description]; ?></td>
                 </tr>                                            
-                  <?php                  
-              } ?>
+              <?php }
+              ?>
             </tbody>
           </table>
         </div>
-        <?php echo "Total hours: $total_time <br/>";?>
+        <?php echo "Total hours: $total_time <br/>"; ?>
         <div id="footer">
           <?php include('footer.php'); ?>
         </div>
