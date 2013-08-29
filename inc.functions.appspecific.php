@@ -6,7 +6,7 @@ $deliverable_type_array=array("Standard flash banner", "Rich media flash banner"
 $activity_type_array=array("Localization", "Adaptation", "Localization,Adaptation", "Master Development", "Master Development,Localization,Adaptation", "Other","Depp Administration");
 $user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer","Web Developer -  HTML/Web Developer","Sr. Flash Designer","Flash Designer","Web Developer","Flash Developer", "QA Engineer", "Depp administration", "Others");
 $project_billing_type_array=array("Retained", "Non-retained");
-$time_activity_type_array=array("Development", "QA", "PM Meeting", "Holiday", "Internal Time", "Leave", "Training","Depp Administration","Waiting Time","Requirement Analysis","Internal Planning","RND","Documentation");
+$time_activity_type_array=array("Development", "QA", "PM Meeting", "Holiday", "Internal Time", "Leave", "Training","Depp Administration","Waiting Time","Requirement Analysis","Internal Planning","RND","Documentation","Review");
 $mail->AddCC("raihan.sikder@adpeople.com","Dev Team");
 
 $defaultPopUpConfirmationMsg="Please confirm the action by checking the box to the left.";
