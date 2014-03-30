@@ -80,7 +80,7 @@ input:focus, textarea:focus {
 <div id="wrapper">
   <div class="containerLogin">      
       <form action="" method="post" name="admin_login_form">        
-          <img  src="images/team-hogarth-logo.png"/>          
+        <h1>ACTIVATION TIME TRACKER</h1>          
           <table width="100%" class="login" style="float:none;">            
             <tr>              
                 <td align="center">

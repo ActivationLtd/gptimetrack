@@ -132,24 +132,6 @@ $rows = mysql_num_rows($r);
                   </tr>
                   <tr>
                     <td>
-                      Project billing type:<br/>
-                      <?php
-                      $selectedId = addEditInputField('project_billing_type');
-                      createSelectOptionsFrmArray($project_billing_type_array, $selectedId, "project_billing_type", " class='validate[required]'")
-                      ?>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Project Brand Name:<br/> 
-                      <?php
-                      $selectedId = addEditInputField('project_brand_name');
-                      createSelectOptionsFrmArray($brands_array, $selectedId, "project_brand_name", " class='validate[required]'")
-                      ?>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
                       project_client_id: <br/>
                       <?php
                       $selectedId = addEditInputField('project_client_id');
@@ -158,12 +140,7 @@ $rows = mysql_num_rows($r);
                       ?>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      project_country_name:<br/>
-                      <input name="project_country_name" type="text" value="<?php echo addEditInputField('project_country_name'); ?>" size="30" maxlength="60" class="validate[required]" />
-                    </td>
-                  </tr>
+
                   <tr>
                     <td>
                       project_start_datetime :<br/> 
@@ -194,14 +171,7 @@ $rows = mysql_num_rows($r);
                       <input name="project_end_datetime" type="text" value="<?php echo addEditInputField('project_end_datetime'); ?>" size="20" class="validate[required]" readonly="readonly" />
                     </td>
                   </tr>
-                  <!--
-                  <tr>
-                    <td>
-                      project_bucket_name:<br/>
-                      <input name="project_bucket_name" type="text" value="<?php echo addEditInputField('project_bucket_name'); ?>" size="30" maxlength="60" class="validate[required]" />
-                    </td>
-                  </tr>
-                  -->
+
                   <tr>
                     <td>
                       project_estimated_hours:<br/>
@@ -231,24 +201,7 @@ $rows = mysql_num_rows($r);
                       project_deliverable_count:<br/>
                       <input name="project_deliverable_count" type="text" value="<?php echo addEditInputField('project_deliverable_count'); ?>" size="30" maxlength="60" class="validate[required]" />
                   </tr>
-                  <tr>
-                    <td>
-                      project_depp_key:<br/>
-                      <input name="project_depp_key" type="text" value="<?php echo addEditInputField('project_depp_key'); ?>" size="30" maxlength="60" class="validate[required]" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      project_vml_job_number:<br/>
-                      <input name="project_vml_job_number" type="text" value="<?php echo addEditInputField('project_vml_job_number'); ?>" size="30" maxlength="60" class="" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      project_hogarth_job_number:<br/>
-                      <input name="project_hogarth_job_number" type="text" value="<?php echo addEditInputField('project_hogarth_job_number'); ?>" size="30" maxlength="60" class="" />
-                    </td>
-                  </tr>
+
                   <tr>
                     <td>
                       project_additional_info: <br/> 
@@ -271,7 +224,7 @@ $rows = mysql_num_rows($r);
                 <input type="hidden" name="project_updated_by_user_id" value="<?php echo $_SESSION["current_user_id"]; ?>" />
                 <?php if ($project_id) { ?>
                   <input type="hidden" name="project_id" value="<?php echo $project_id; ?>" />
-                  <?php }
+                <?php }
                 ?>
               </form>
               <div class="clear"></div>
@@ -284,12 +237,9 @@ $rows = mysql_num_rows($r);
                 <tr>
                   <th>project_id</th>
                   <th><span class="w150">project_name</span></th>
-                  <th>Brand<!--project_brand_name--></th>
+
                   <th>Client<!--project_client--></th>
                   <th>Type<!--project_deliverable_type--></th>
-                  <th>Units<!--project_deliverable_count--></th>
-                  <th>DEPP ID<!--project_depp_key--></th>
-                  <th>VML ID<!--project_vml_job_number--></th>                
                   <th>Estimated Hrs<!--project_estimated_hours--></th>
                   <th>Utilized Hrs<!--project_utilization_hours--></th>
                   <th>Status</th>
@@ -298,12 +248,8 @@ $rows = mysql_num_rows($r);
                 <tr class="filterInput">
                   <td><input type="text" name="project_id" value="" class="search_init" /></td>
                   <td><input type="text" name="project_name" value="" class="search_init" /></td>
-                  <td><input type="text" name="project_brand_name" value="" class="search_init" /></td>
                   <td><input type="text" name="project_client" value="" class="search_init" /></td>
                   <td><input type="text" name="project_deliverable_type" value="" class="search_init" /></td>
-                  <td><input type="text" name="project_deliverable_count" value="" class="search_init" /></td>
-                  <td><input type="text" name="project_depp_key" value="" class="search_init" /></td>
-                  <td><input type="text" name="project_vml_job_number" value="" class="search_init" /></td>
                   <td><input type="text" name="Status" value="" class="search_init" /></td>
                   <td><input type="text" name="project_estimated_hours" value="" class="search_init" /></td>
                   <td><input type="text" name="project_utilization_hours" value="" class="search_init" /></td>
@@ -315,12 +261,8 @@ $rows = mysql_num_rows($r);
                   <tr>
                     <td><?php echo $arr[$i][project_id]; ?></td>
                     <td><?php echo "<a href='project_list.php?project_id=" . $arr[$i][project_id] . "&param=edit'>" . $arr[$i][project_name] . "</a>"; ?></td>
-                    <td><?php echo $arr[$i][project_brand_name]; ?></td>
                     <td><?php echo getClientCompanyNameFrmId($arr[$i][project_client_id]); ?></td>
                     <td><?php echo $arr[$i][project_deliverable_type]; ?></td>
-                    <td><?php echo $arr[$i][project_deliverable_count]; ?></td>
-                    <td><?php echo $arr[$i][project_depp_key]; ?></td>
-                    <td><?php echo $arr[$i][project_vml_job_number]; ?></td>                
                     <td><?php echo $arr[$i][project_estimated_hours]; ?></td>
                     <td><?php echo "<a target='_blank' href='report.php?submit=Filter&reportType=project&time_project_id=" . $arr[$i][project_id] . "'>" . countProjectUtilizationHoursFrmProjectId($arr[$i][project_id]) . "</a>"; ?></td>
                     <td><?php echo getActiveStatus($arr[$i][project_active]); ?></td>

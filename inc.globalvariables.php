@@ -25,10 +25,11 @@ $scriptpath='http://174.120.107.7/~gptimetrack'; //office testing script path wi
 */
 // Local
 
-$dbhost='localhost';		
-$dbuser='gptimetr';
-$dbpass='graphicpeople';
-$dbname='gptimetr_db1';
+$dbhost='localhost';
+$dbname='acttimetrack';
+$dbuser='root';
+$dbpass='';
+
 
 // live
 /*
@@ -37,7 +38,7 @@ $dbuser='smartsec';
 $dbpass='activation';
 $dbname='smartsec_demo1';
 */  
-mysql_select_db($dbname,mysql_connect($dbhost, $dbuser, $dbpass));
+mysql_select_db($dbname,mysql_connect($dbhost, $dbuser, $dbpass)) or die(mysql_error());
 /***********************************/
 /*
 *	file upload parameters

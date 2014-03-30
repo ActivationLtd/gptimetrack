@@ -1,5 +1,5 @@
 
-<div align="center">This Page is Best Viewed with Mozilla Firefox. Copyright &copy; 2012 <a href="http://www.graphicpeoplestudio.com" target="_blank">GraphicPeople Ltd</a>. All Rights Reserved</div>
+<div align="center">This Page is Best Viewed with Mozilla Firefox. Copyright &copy; 2012 <a href="http://www.activationltd.com" target="_blank">ActivationLtd</a>. All Rights Reserved</div>
 
 <div class="debug">
 <?php 

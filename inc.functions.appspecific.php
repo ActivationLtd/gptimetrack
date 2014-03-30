@@ -1,12 +1,12 @@
 <?php
 include_once('inc.functions.appspecific.temp.php');
 
-$brands_array=array("Colgate", "Hills", "Adhoc","DEPP Admin", "Others","SEAT","HTC","HP","Grant Thorton","Corsodyl","HSBC","Mecca Bingo", "EPSON", "Brother","Verizon","PM Meeting","Holiday","Internal Time","Leave","Training","Betfair","Pfizer","Nike","Clean & Clear","T.Rowe Price","GMI");
-$deliverable_type_array=array("Standard flash banner", "Rich media flash banner", "Static banner", "Edm", "Website", "Others","PM Meeting","Holiday","Internal time","Leave","Training",);
-$activity_type_array=array("Localization", "Adaptation", "Localization,Adaptation", "Master Development", "Master Development,Localization,Adaptation", "Other","Depp Administration");
-$user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer","Web Developer -  HTML/Web Developer","Sr. Flash Designer","Flash Designer","Web Developer","Flash Developer", "QA Engineer", "Depp administration", "Others");
+$brands_array=array();
+$deliverable_type_array=array("Development", "Training", "Deployment", "Others");
+$activity_type_array=array("Development","Others" );
+$user_roles_array=array("Sr. Project Manager", "Project Manager", "Team Leader", "Sr. Developer", "Developer","Web Developer -  HTML/Web Developer","Sr. Flash Designer","Flash Designer","Web Developer","Flash Developer", "QA Engineer", "Others");
 $project_billing_type_array=array("Retained", "Non-retained");
-$time_activity_type_array=array("Development", "QA", "PM Meeting", "Holiday", "Internal Time", "Leave", "Training","Depp Administration","Waiting Time","Requirement Analysis","Internal Planning","RND","Documentation","Review and communication");
+$time_activity_type_array=array("Development", "QA", "Meeting", "Holiday", "Internal Time", "Leave", "Training","Waiting Time","Requirement Analysis","Internal Planning","RND","Documentation","Review and communication");
 $mail->AddCC("raihan.sikder@adpeople.com","Dev Team");
 
 $defaultPopUpConfirmationMsg="Please confirm the action by checking the box to the left.";
